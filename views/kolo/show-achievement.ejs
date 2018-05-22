@@ -1,0 +1,27 @@
+<% include ../partials/bootstrap %>
+
+<div class="container">
+    <div class="border pb-3 mt-5 mb-5">
+        <div class="post-img">
+            <img width="100%" src="<%=achievements.img%>">
+        </div>
+        <div class="post-content">
+            <div class="row title">
+                <h2><%= achievements.title%></h2>
+            </div>
+            <div class="row desc">
+                <p><%- achievements.content%></p>
+            </div>
+            <div class="row extra">
+                <span><%= achievements.date.toDateString()%></span>
+            </div>
+            <div class="row">
+                <a class="btn btn-md btn-info mt-3" href="/kolo/osiagniecia">Powrót</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+

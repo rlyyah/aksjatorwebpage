@@ -1,0 +1,29 @@
+<% include ../partials/bootstrap %>
+
+<div class="container">
+    <a href="/edit">powrót</a>
+    <a href="/kolo/osiagniecia/add" class="btn btn-md btn-info">DODAJ OSIĄGNIĘCIE</a>
+    <% for(var i=achievements.length-1; i>0; i--){%>
+				    <div class="row mt-5">
+				       <div class="image col-lg-3">
+	    			        <img src="<%=achievements[i].img%>">
+	    			    </div>
+	    			    <div class="achievement col-lg-9">
+	        			    <div class="title">
+	        			        <a href="/kolo/osiagniecia/<%=achievements[i]._id%>" class="lead"><%=achievements[i].title%></a>
+	        			    </div>
+	        			    <div class="extra">
+	        			        <span><strong><%=achievements[i].date.toDateString()%></strong></span>
+	        			    </div>
+	        			    <div class="description">
+	        			        <p><%-achievements[i].content.substring(0,100)%>...</p>
+	        			    </div>
+                            	<form action="/kolo/osiagniecia/<%=achievements[i]._id%>?_method=DELETE" method="POST">
+                            	    <button class="mb-3 btn btn-danger btn-md">DELETE</button> 
+                            	</form>
+	        			        <a href="/kolo/osiagniecia/<%=achievements[i]._id%>/edit" class="mb-3 btn btn-warning btn-md">EDIT</a>
+	    			    </div> 
+				    </div>			    
+			<% }%>
+    
+</div>

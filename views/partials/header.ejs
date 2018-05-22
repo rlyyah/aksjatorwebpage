@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<!--BOOTSTRAP CSS CMD link -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+	<title>WGiG</title>
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Mina:400,700&amp;subset=latin-ext" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed&amp;subset=latin-ext" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+<!-- FONT AWESOMEE-->
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+	<div class="container-fluid sticky-top-nav">
+			
+			<!-- NavbarHeader -->
+			<div class="navbar-header">
+		    	<span class="navbar-brand mb-0 h1"><img src="data:image/png;base64,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" width="55px"><img src="http://www.wgig.agh.edu.pl/logo/WGiG_LOGOr_poziom_RGB.jpg" width="280px"></span>
+			</div>
+			<!-- NavbarHeader -->
+			<button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+	            <span class="navbar-toggler-icon"></span>
+	        </button>
+
+
+			<!-- NavbarCollapse -->
+		  	<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+			 <ul class="navbar-nav mr-auto ml-auto">
+				  <li class="nav-item">
+				    <a class="nav-link vertical-center" href="/">Strona Główna</a>
+				  </li>
+				  <li class="nav-item dropdown">
+				    <a class="nav-link" data-toggle="dropdown" href="/kolo" role="button" aria-haspopup="true" aria-expanded="false">Koło</a>
+				    <div class="dropdown-menu">
+				      <a class="dropdown-item" href="/kolo/misja">Misja Koła</a>
+				      <a class="dropdown-item" href="/kolo/czlonkowie">Członkowie</a>
+					  <a class="dropdown-item" href="/kolo/osiagniecia">Nasze osiągnięcia</a>
+				      <a class="dropdown-item" href="/kolo/dokumenty">Dokumenty</a>
+				      <div class="dropdown-divider"></div>
+				      <a class="dropdown-item" href="#kontakt">Kontakt</a>
+				    </div>
+				  <li class="nav-item dropdown">
+				    <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Działaność Koła</a>
+				    <div class="dropdown-menu">
+				      <a class="dropdown-item" href="przyklad.html">Działaność naukowa</a>
+				      <a class="dropdown-item" href="przyklad.html">Działaność dydaktyczna</a>
+				      <a class="dropdown-item" href="przyklad.html">Konkursy studenckie</a>
+				      <div class="dropdown-divider"></div>
+				      <a class="dropdown-item" href="przyklad.html">Masz problem naukowy <br> do rozwiązania? <br>Wejdź tu! :)</a>
+				    </div>
+				  </li>
+				  <li class="nav-item dropdown">
+				    <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Współpraca</a>
+				    <div class="dropdown-menu">
+				      <a class="dropdown-item" href="przyklad.html">Oferta dla firm</a>
+				      <a class="dropdown-item" href="przyklad.html">Nasze realizacje</a>
+				      <a class="dropdown-item" href="przyklad.html">Sponsorzy</a>
+				      <a class="dropdown-item" href="przyklad.html">Absolwenci</a>
+				      <a class="dropdown-item" href="przyklad.html">Współpraca międzynarodowa</a>
+				      <a class="dropdown-item" href="przyklad.html">Zaprzyjaźnione koła naukowe</a>
+				    </div>
+				  </li>
+				  <li class="nav-item dropdown">
+				    <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Galeria</a>
+				    <div class="dropdown-menu">
+				      <a class="dropdown-item" href="przyklad.html">Projekty naukowe</a>
+				      <a class="dropdown-item" href="przyklad.html">Konferencje</a>
+				      <a class="dropdown-item" href="przyklad.html">Sesje naukowe</a>
+				      <a class="dropdown-item" href="przyklad.html">Wyjazdy</a>
+				      <a class="dropdown-item" href="przyklad.html">Akcje promocyjne</a>
+				    </div>
+				  </li>
+				  <li class="nav-item dropdown">
+				    <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kontakt</a>
+				    <div class="dropdown-menu">
+				      <a class="dropdown-item" href="przyklad2.html">Action</a>
+				      <a class="dropdown-item" href="przyklad2.html">Another action</a>
+				      <a class="dropdown-item" href="przyklad2.html">Something else here</a>
+				      <div class="dropdown-divider"></div>
+				      <a class="dropdown-item" href="przyklad2.html">Separated link</a>
+				    </div>
+				  </li>
+				</ul>
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><span class="navbar-brand mb-0 h1"><img src="https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/24176825_133510807297357_6254601794481372147_n.png?_nc_cat=0&oh=91e60f8f690a68919071508bf50ae0cb&oe=5B74EA0E" width="100px"></span></li>
+				</ul>
+				
+
+		  	</div>
+		  	<!-- NavbarCollapse -->
+		
+	</div>
+</nav>
+
+<!--NAVBAR FINISH ^^ -->
+        
