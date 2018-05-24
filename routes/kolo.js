@@ -8,7 +8,7 @@ var Achievement = require("../models/achievements"),
 
 
 router.get("/misja", function(req, res){
-   Kolo.findOne({name:"The official one"}, function(err, foundKolo){
+   Kolo.findOne({name:"v1"}, function(err, foundKolo){
       if(err){
          console.log(err);
       }else{
@@ -17,7 +17,7 @@ router.get("/misja", function(req, res){
    });
 });
 router.get("/misja/edit", isLoggedIn, function(req, res) {
-    Kolo.findOne({name:"The official one"}, function(err, foundKolo){
+    Kolo.findOne({name:"v1"}, function(err, foundKolo){
       if(err){
          console.log(err);
       }else{
@@ -26,7 +26,7 @@ router.get("/misja/edit", isLoggedIn, function(req, res) {
    });
 });
 router.put("/misja", isLoggedIn, function(req, res) {
-    Kolo.findOne({name:"The official one"}, function(err, foundKolo){
+    Kolo.findOne({name:"v1"}, function(err, foundKolo){
       if(err){
          console.log(err);
       }else{
@@ -184,7 +184,7 @@ router.delete("/osiagniecia/:id", isLoggedIn, function(req, res){
 
 
 router.get("/dokumenty", function(req, res){
-   Kolo.findOne({name:"The official one"}, function(err, foundKolo){
+   Kolo.findOne({name:"v1"}, function(err, foundKolo){
       if(err){
          console.log(err);
       }else{
@@ -194,7 +194,7 @@ router.get("/dokumenty", function(req, res){
 });
 
 router.get("/dokumenty/edit", isLoggedIn, function(req, res) {
-    Kolo.findOne({name:"The official one"}, function(err, foundKolo){
+    Kolo.findOne({name:"v1"}, function(err, foundKolo){
       if(err){
          console.log(err);
       }else{
@@ -204,7 +204,7 @@ router.get("/dokumenty/edit", isLoggedIn, function(req, res) {
 });
 
 router.put("/dokumenty", isLoggedIn, function(req, res) {
-    Kolo.findOne({name:"The official one"}, function(err, foundKolo){
+    Kolo.findOne({name:"v1"}, function(err, foundKolo){
       if(err){
          console.log(err);
       }else{

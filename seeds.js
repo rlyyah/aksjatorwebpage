@@ -1,47 +1,44 @@
 var mongoose = require("mongoose");
 var Achievement = require("./models/achievements");
-var Member = require("./models/members");
-var Kolo = require("./models/KoloManage");
+var Member = require("./models/members_two");
+var Kolo = require("./models/kolo");
 var faker = require("faker");
 faker.locale = "pl";
 
 
 
 function seedMembers(){
-    Member.remove({}, function(err) {
+    Kolo.create({
+            name: "v1",
+            docs: "test",
+            mission: "test"
+        }, function(err, createdKolo) {
+            if(err){
+                console.log(err);
+            }else{
+                console.log("HELLO WORLD")
+            }
+        });
+    /*Member.create({}, function(err, createdAchiev) {
         if(err){
             console.log(err);
         }else{
-            for(var i=0; i<30; i++){
-                Member.students.create({
-                    name: faker.name.findName()
-                }, function(err, createdStudent){
-                    if(err){
-                        console.log(err);
-                    }else{
-                        console.log(createdStudent)
-                    }
-                });
-                Member.graduates.create({
-                    name: faker.name.findName()
-                }, function(err, createdGraduate){
-                    if(err){
-                        console.log(err);
-                    }else{
-                        console.log(createdGraduate);
-                    }
-                });
-            }
+            console.log("hi im member");
         }
-    });
-}
+    }); */
+        
+    }
+    
+
+
+
 
 function seedAchievements(){
     Achievement.remove({}, function(err){
         if(err){
             console.log(err);
         }else{
-            for(var i = 0; i<15; i++){
+            for(var i = 0; i<3; i++){
                 var tit = faker.name.title();
                 var cont = faker.lorem.text();
                 var url = faker.image.imageUrl();
@@ -63,7 +60,7 @@ function seedAchievements(){
 
 function seedDB(){
     seedMembers();
-    
+    seedAchievements();
 }
 
 

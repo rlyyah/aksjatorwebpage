@@ -21,7 +21,10 @@ var Member = require("./models/members"),
     User = require("./models/user");
 
 
+
 var seedDB = require("./seeds");
+
+
 
 app.use(require("express-session")({
     secret: "Tomasz is the best!",
@@ -35,9 +38,10 @@ passport.use(new localStategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-//seedDB();
 
-mongoose.connect("mongodb://localhost/wgig_page");
+mongoose.connect("mongodb://aksjator:aksjatorp4ssword@ds131800.mlab.com:31800/aksjator");
+seedDB();
+//mongoose.connect("mongodb://localhost/wgig_page");
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
