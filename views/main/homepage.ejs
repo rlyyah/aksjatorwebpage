@@ -3,7 +3,8 @@
 <!--BIG ASS FRONT IMG vv-->
 <div class="container-fluid">	
 	<div class="thumbnail top-left">
-		<img class="main-logo" src="https://images.pexels.com/photos/533930/pexels-photo-533930.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+		<% var num = Math.floor(Math.random() * 5)%>
+		<img class="main-logo" src=<%=imgUrl[num]%>>
 		<div class="container caption">
 			<h1>Aksjator <span class="whole-logo"><span class="logo-tekst">[ </span><span id="first-dot">.</span><span id="sec-dot">.</span><span id="third-dot">.</span><span class="logo-tekst"> ]</span></span> </h1> 
 			<p>Koło naukowe mechaniki konstrukcji</p>
@@ -11,6 +12,10 @@
 	</div>
 </div>
 <!--BIG ASS FRONT IMG ^^ -->
+<% include ../partials/sponsors %>
+<div id='arrow-up'>
+	<i onclick='topFunction()' class="fas fa-angle-up"></i>
+</div>
 
 <h2>O kole</h2>
 <div class="separator-container">
@@ -20,7 +25,7 @@
 
 <div class="container">
 	<div class="row">
-		<p class="about">Spicy jalapeno bacon ipsum dolor amet pastrami prosciutto alcatra, ball tip flank pork chop meatball turducken ground round porchetta doner t-bone kielbasa frankfurter strip steak. Tongue pastrami burgdoggen porchetta prosciutto bacon beef. Shankle pastrami pig biltong tongue beef buffalo, boudin kielbasa ground round leberkas ham hock rump filet mignon ribeye. Ham kevin salami andouille, biltong beef porchetta chuck ground round.</p>
+		<p class="about mt-3">Studenckie Koło Naukowe Mechaniki Konstrukcji "Aksjator" powstało w grudniu 2017 roku przy Katedrze Geomechaniki, Budownictwa i Geotechniki WGIG AGH. Misją KN "Aksjator" jest zrzeszanie i wspomaganie w rozwoju naukowym pracowitych i zdolnych studentów AGH, a w szczególności studentów kierunku Budownictwo. Zakres zainteresowań członków Koła obejmuje m.in.: inżynierię lądową i mechaniczną, modelowanie metodą elementów skończonych, dynamikę konstrukcji, optymalizację konstrukcji i mechanikę materiałów. Członkowie Koła mają możliwość uczestniczenia w kursach dotyczących mechaniki, modelowania MES oraz programowania prowadzonych przez opiekunów Koła oraz specjalistów spoza AGH. W ramach pracy w Kole studenci wykonują ciekawe projekty konstrukcyjne oraz obliczenia inżynierskie i naukowe, których efekty prezentowane są na studenckich konferencjach naukowych w całej Polsce.</p>
 	</div>
 </div>
 
@@ -33,20 +38,72 @@
 		<div class="col-md-10 art-gallery">
 			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 				<ol class="carousel-indicators">
-    				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+					<% homepageImg.img.forEach(function(i, index){%>
+					 <%if(index<=8){%>
+					 	<% if(index===0){%>
+							<li data-target="#carouselExampleIndicators" data-slide-to="<%=index%>" class="active"></li>
+						<% }else{%>
+							<li data-target="#carouselExampleIndicators" data-slide-to="<%=index%>"></li>
+						<% }%>
+					 <% }%>
+					<% })%>	
+    				<!--<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>-->
+    				<!--<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    				<li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+    				<li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+    				<li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+    				<li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+    				<li data-target="#carouselExampleIndicators" data-slide-to="8"></li>-->
   				</ol>
-			  <div class="carousel-inner">
-			    <div class="carousel-item active">
-			      <img class="d-block w-100" src="https://images.pexels.com/photos/460635/pexels-photo-460635.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="First slide">
-			    </div>
-			    <div class="carousel-item">
+  				
+  				<div class="carousel-inner">
+  					<% homepageImg.img.forEach(function(img, index){%>
+	  					<%if(index<=8){%>
+						 	<% if(index===0){%>
+		  						<div class="carousel-item active">
+						    		<img class="d-block w-100" src='<%=img.url%>'>
+						    		<% if(img.button){%>
+						    			<a href='<%=img.link%>' class="btn btn-lg btn-info homepage-news-button">Dowiedz się więcej!</a>
+						    		<% }%>
+						    	</div>
+	  						<% }else{%>
+		  						<div class="carousel-item">
+						    		<img class="d-block w-100" src='<%=img.url%>'>
+						    		<% if(img.button){%>
+						    			<a href='<%=img.link%>' class="btn btn-lg btn-info homepage-news-button">Dowiedz się więcej!</a>
+						    		<% }%>
+						    	</div>
+	  						<% }%>
+						 <% }%>
+  					<% })%>
+			  
+			    
+			    <!--<div class="carousel-item">
 			      <img class="d-block w-100" src="https://images.pexels.com/photos/220762/pexels-photo-220762.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Second slide">
 			    </div>
 			    <div class="carousel-item">
 			      <img class="d-block w-100" src="https://images.pexels.com/photos/373600/pexels-photo-373600.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Third slide">
 			    </div>
+			    <div class="carousel-item">
+			      <img class="d-block w-100" src="https://images.pexels.com/photos/827058/pexels-photo-827058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Forth slide">
+			    </div>
+			    <div class="carousel-item">
+			      <img class="d-block w-100" src="https://images.pexels.com/photos/923548/pexels-photo-923548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Fifth slide">
+			    </div>
+			    <div class="carousel-item">
+			      <img class="d-block w-100" src="https://images.pexels.com/photos/936133/pexels-photo-936133.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Sixth slide">
+			    </div>
+			    <div class="carousel-item">
+			      <img class="d-block w-100" src="https://images.pexels.com/photos/994234/pexels-photo-994234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Seventh slide">
+			    </div>
+			    <div class="carousel-item">
+			      <img class="d-block w-100" src="https://images.pexels.com/photos/1144404/pexels-photo-1144404.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Seventh slide">
+			    </div>
+			    <div class="carousel-item">
+			      <img class="d-block w-100" src="https://images.pexels.com/photos/948898/pexels-photo-948898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Seventh slide">
+			    </div>-->
 			  </div>
 			  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -72,7 +129,7 @@
 
 
 <div class="container about">
-	<div class="row">
+	<div class="row mt-5 pt-3">
 		<div class="col-md-4">
 
 			<!-- Button trigger modal -->
@@ -99,14 +156,14 @@
 			    </div>
 			  </div>
 			</div>	
-			<h3>sukces</h3>
+			<h3>nasze osiągnięcia</h3>
 
 		</div>
 		<div class="col-md-4">
 			
 			<!-- Button trigger modal -->
 			<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter1">
-			  <i class="fas fa-american-sign-language-interpreting"></i>
+			  <i class="fas fa-flask"></i>
 			</button>
 			<!-- Modal -->
 			<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -128,14 +185,14 @@
 			    </div>
 			  </div>
 			</div>	
-			<h3>swieże memy</h3>
+			<h3>projekty naukowe</h3>
 
     	</div>
 		<div class="col-md-4">
 			
 			<!-- Button trigger modal -->
 			<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter2">
-			  <i class="fas fa-bus"></i>
+			  <i class="fas fa-handshake"></i>
 			</button>
 			<!-- Modal -->
 			<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -148,7 +205,7 @@
 			        </button>
 			      </div>
 			      <div class="modal-body">
-			        <p>Scratch leg; meow for can opener to feed me lick butt and make a weird face and decide to want nothing to do with my owner today and trip on catnip meoooow, mesmerizing birds peer out window, chatter at birds, lure them to mouth. Destroy the blinds you call this cat food. Walk on car leaving trail of paw prints on hood and windshield bleghbleghvomit my furball really tie the room together and kitty poochy i am the best cereal boxes make for five star accommodation.</p>
+			        <p>Scratch leg meow for can opener to feed me lick butt and make a weird face and decide to want nothing to do with my owner today and trip on catnip meoooow, mesmerizing birds peer out window, chatter at birds, lure them to mouth. Destroy the blinds you call this cat food. Walk on car leaving trail of paw prints on hood and windshield bleghbleghvomit my furball really tie the room together and kitty poochy i am the best cereal boxes make for five star accommodation.</p>
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -157,7 +214,7 @@
 			    </div>
 			  </div>
 			</div>	
-			<h3>wycieczki</h3>
+			<h3>oferta współpracy</h3>
 
 		</div>
 	</div>
@@ -188,14 +245,14 @@
 			    </div>
 			  </div>
 			</div>
-			<h3>odrobina nauki</h3>
+			<h3>kursy i szkolenia</h3>
 
 		</div>
 		<div class="col-md-4">
 			
 			<!-- Button trigger modal -->
 			<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter4">
-			  <i class="fas fa-smile"></i>
+			  <i class="fas fa-shipping-fast"></i>
 			</button>
 			<!-- Modal -->
 			<div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -217,14 +274,14 @@
 			    </div>
 			  </div>
 			</div>
-			<h3>dobra zabawa</h3>
+			<h3>wyjazdy naukowe</h3>
 
 		</div>
 		<div class="col-md-4">
 			
 			<!-- Button trigger modal -->
 			<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter5">
-			  <i class="fas fa-glass-martini"></i>
+			  <i class="fas fa-donate"></i>
 			</button>
 			<!-- Modal -->
 			<div class="modal fade" id="exampleModalCenter5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -246,7 +303,7 @@
 			    </div>
 			  </div>
 			</div>
-			<h3>alkohol</h3>
+			<h3>wspomóż nas</h3>
 
 		</div>
 	</div>
@@ -258,24 +315,24 @@
 </div>
 
 <div class="container">
-	<div class="row  justify-content-center mt-5">
-		<div class="col-3 col-sm-6">
+	<div class="row justify-content-center mt-5 pt-3">
+		<div class="col-md-3">
 			<!-- Button trigger modal -->
-			<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#photoModal1">
-			  
+			<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#photoModal1" style='background: url(<%=homepageImg.przewo.img%>); background-size: 110%; background-repeat: no-repeat; display: block; margin: 0 auto;'>
+		
 			</button>
 			<!-- Modal -->
 			<div class="modal fade" id="photoModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 			  <div class="modal-dialog modal-dialog-centered" role="document">
 			    <div class="modal-content" id="przewo">
 			      <div class="modal-header" >
-			        <h3 class="modal-title" id="exampleModalLongTitle">Imię nazwisko1</h3>
+			        <h3 class="modal-title" id="exampleModalLongTitle"><%=homepageImg.przewo.name%></h3>
 			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			          <span aria-hidden="true">&times;</span>
 			        </button>
 			      </div>
 			      <div class="modal-body">
-			        <p>Destroy couch and sometimes switches in french and say "miaou" just because well why not so lick the other cats. Poop on grasses eat the fat cats food eat an easter feather as if it were a bird then burp victoriously, but tender prance along on top of the garden fence, annoy the neighbor's dog and make it bark meow, litter kitter kitty litty little kitten big roar roar feed me. Head nudges . Decide to want nothing to do with my owner today shake treat bag, and bleghbleghvomit my furball really tie the room together, but scratch me there, elevator butt sit in box sit in a box for hours. Meow meow, i tell my human. Vommit food and eat it again cereal boxes make for five star accommodation and fall asleep on the washing machine lick the other cats flop over.</p>
+			        <p><%=homepageImg.przewo.desc%></p>
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -286,12 +343,12 @@
 			</div>
 			
 			<h3>Przewodniczący</h3>
-			<h4>Imię nazwisko</h4>
+			<h4><%=homepageImg.przewo.name%></h4>
 		</div>
 			
-		<div class="col-3 col-sm-6">
+		<div class="col-md-3">
 			<!-- Button trigger modal -->
-			<button type="button" class="btn btn-lg btn-secondary" data-toggle="modal" data-target="#photoModal2">
+			<button type="button" class="btn btn-lg btn-secondary" data-toggle="modal" data-target="#photoModal2" style='background: url(<%=homepageImg.vice.img%>); background-size: 110%; background-repeat: no-repeat; display: block; margin: 0 auto;'>
 			  
 			</button>
 			<!-- Modal -->
@@ -299,13 +356,13 @@
 			  <div class="modal-dialog modal-dialog-centered" role="document">
 			    <div class="modal-content" id="przewo">
 			      <div class="modal-header" >
-			        <h3 class="modal-title" id="exampleModalLongTitle">Imię nazwisko2</h3>
+			        <h3 class="modal-title" id="exampleModalLongTitle"><%=homepageImg.vice.name%></h3>
 			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			          <span aria-hidden="true">&times;</span>
 			        </button>
 			      </div>
 			      <div class="modal-body">
-			        <p>Destroy couch and sometimes switches in french and say "miaou" just because well why not so lick the other cats. Poop on grasses eat the fat cats food eat an easter feather as if it were a bird then burp victoriously, but tender prance along on top of the garden fence, annoy the neighbor's dog and make it bark meow, litter kitter kitty litty little kitten big roar roar feed me. Head nudges . Decide to want nothing to do with my owner today shake treat bag, and bleghbleghvomit my furball really tie the room together, but scratch me there, elevator butt sit in box sit in a box for hours. Meow meow, i tell my human. Vommit food and eat it again cereal boxes make for five star accommodation and fall asleep on the washing machine lick the other cats flop over.</p>
+			        <p><%=homepageImg.vice.desc%></p>
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -316,12 +373,12 @@
 			</div>
 			
 			<h3>vice Przewodniczący</h3>
-			<h4>Imię nazwisko</h4>
+			<h4><%=homepageImg.vice.name%></h4>
 		</div>
 
-		<div class="col-3 col-sm-6">
+		<div class="col-md-3">
 			<!-- Button trigger modal -->
-			<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#photoModal3">
+			<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#photoModal3" style='background: url(<%=homepageImg.skarbik.img%>); background-size: 110%; background-repeat: no-repeat; display: block; margin: 0 auto;'>
 			  
 			</button>
 			<!-- Modal -->
@@ -329,13 +386,13 @@
 			  <div class="modal-dialog modal-dialog-centered" role="document">
 			    <div class="modal-content" id="przewo">
 			      <div class="modal-header" >
-			        <h3 class="modal-title" id="exampleModalLongTitle">Imię nazwisko3</h3>
+			        <h3 class="modal-title" id="exampleModalLongTitle"><%=homepageImg.skarbik.name%></h3>
 			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			          <span aria-hidden="true">&times;</span>
 			        </button>
 			      </div>
 			      <div class="modal-body">
-			        <p>Destroy couch and sometimes switches in french and say "miaou" just because well why not so lick the other cats. Poop on grasses eat the fat cats food eat an easter feather as if it were a bird then burp victoriously, but tender prance along on top of the garden fence, annoy the neighbor's dog and make it bark meow, litter kitter kitty litty little kitten big roar roar feed me. Head nudges . Decide to want nothing to do with my owner today shake treat bag, and bleghbleghvomit my furball really tie the room together, but scratch me there, elevator butt sit in box sit in a box for hours. Meow meow, i tell my human. Vommit food and eat it again cereal boxes make for five star accommodation and fall asleep on the washing machine lick the other cats flop over.</p>
+			        <p><%=homepageImg.skarbik.desc%></p>
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -346,12 +403,12 @@
 			</div>
 			
 			<h3>Skrabnik</h3>
-			<h4>Imię nazwisko</h4>
+			<h4><%=homepageImg.skarbik.name%></h4>
 		</div>
 
-		<div class="col-3 col-sm-6">
+		<div class="col-md-3">
 			<!-- Button trigger modal -->
-			<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#photoModal4">
+			<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#photoModal4" style='background: url(<%=homepageImg.sekretarz.img%>); background-size: 110%; background-repeat: no-repeat; display: block; margin: auto auto;'>
 			  
 			</button>
 			<!-- Modal -->
@@ -359,13 +416,13 @@
 			  <div class="modal-dialog modal-dialog-centered" role="document">
 			    <div class="modal-content" id="przewo">
 			      <div class="modal-header" >
-			        <h3 class="modal-title" id="exampleModalLongTitle">Imię nazwisko4</h3>
+			        <h3 class="modal-title" id="exampleModalLongTitle"><%=homepageImg.sekretarz.name%></h3>
 			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			          <span aria-hidden="true">&times;</span>
 			        </button>
 			      </div>
 			      <div class="modal-body">
-			        <p>Destroy couch and sometimes switches in french and say "miaou" just because well why not so lick the other cats. Poop on grasses eat the fat cats food eat an easter feather as if it were a bird then burp victoriously, but tender prance along on top of the garden fence, annoy the neighbor's dog and make it bark meow, litter kitter kitty litty little kitten big roar roar feed me. Head nudges . Decide to want nothing to do with my owner today shake treat bag, and bleghbleghvomit my furball really tie the room together, but scratch me there, elevator butt sit in box sit in a box for hours. Meow meow, i tell my human. Vommit food and eat it again cereal boxes make for five star accommodation and fall asleep on the washing machine lick the other cats flop over.</p>
+			        <p><%=homepageImg.sekretarz.desc%></p>
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -376,7 +433,7 @@
 			</div>
 			
 			<h3>Sekretarz</h3>
-			<h4>Imię nazwisko</h4>
+			<h4><%=homepageImg.sekretarz.name%></h4>
 		</div>
 	</div>
 	
@@ -389,11 +446,11 @@
  <div class="separator line-separator">∎</div>
 </div>
 
-<div class="container ">
-	<div class="row  justify-content-center mt-5">
-		<div class="col-3">
+<div class="container">
+	<div class="row  justify-content-center mt-5 pt-3 mb-2">
+		<div class="col-md-3">
 						<!-- Button trigger modal -->
-			<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#photoModal5">
+			<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#photoModal5" style=' background-image: url(http://santetotal.com/wp-content/uploads/2014/05/default-user.png); background-size: 105%;'>
 			  
 			</button>
 			<!-- Modal -->
@@ -421,8 +478,8 @@
 			<h4 class="mt-2">Dr inż Henryk Ciurej</h4>
 		</div>
 			
-		<div class="col-3">
-			<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#photoModal6">
+		<div class="col-md-3">
+			<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#photoModal6" style=' background-image: url(http://santetotal.com/wp-content/uploads/2014/05/default-user.png); background-size: 105%;'>
 			  
 			</button>
 			<!-- Modal -->

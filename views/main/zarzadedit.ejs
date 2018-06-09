@@ -1,0 +1,82 @@
+<% include ../partials/bootstrap %>
+
+<div class="container">
+    <div class="row">
+        <div class='col-md-12'>
+            <h1 class='text-center'>Edycja zarządu</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <h2>Przewo</h2>
+            <form action='/edit/zarzadedit' method='POST'>
+                <div class="form-group">
+                        <input type="text" name="przewo[name]" placeholder="Imię i nazwisko here">
+                </div>
+                <div class="form-group">
+                        <input type="text" name="przewo[img]" placeholder="zdj here">
+                </div>
+                <div class="form-group">
+                        <textarea name="przewo[desc]" rows="10" class="form-control" maxlength='150'>Opis here</textarea>
+                </div>
+                <div class="form-group">
+                        <button class='btn btn-lg btn-primary'>Zatwierdz!</button>
+                </div>                
+            </form>
+        </div>
+        <div class="col-md-3">
+            <h2>Vice</h2>
+            <form action='/edit/zarzadedit' method='POST'>
+                <div class="form-group">
+                        <input type="text" name="vice[name]" placeholder="Imię i nazwisko here">
+                </div>
+                <div class="form-group">
+                        <input type="text" name="vice[img]" placeholder="zdj here">
+                </div>
+                <div class="form-group">
+                        <textarea name="vice[desc]" rows="10" class="form-control" maxlength='150'>Opis here</textarea>
+                </div>
+                <div class="form-group">
+                        <button class='btn btn-lg btn-primary'>Zatwierdz!</button>
+                </div>     
+            </form>
+        </div>
+        <div class="col-md-3">
+            <h2>Skarbnik</h2>
+            <form action='/edit/zarzadedit' method='POST'>
+                <div class="form-group">
+                        <input type="text" name="skarbnik[name]" placeholder="Imię i nazwisko here">
+                </div>
+                <div class="form-group">
+                        <input type="text" name="skarbnik[img]" placeholder="zdj here">
+                </div>
+                <div class="form-group">
+                        <textarea name="skarbnik[desc]" rows="10" class="form-control" maxlength='150'>Opis here</textarea>
+                </div>
+                <div class="form-group">
+                        <button class='btn btn-lg btn-primary'>Zatwierdz!</button>
+                </div>      
+            </form>
+        </div>
+        <div class="col-md-3">
+            <h2>Sekretarz</h2>
+            <form action='/edit/zarzadedit' method='POST'>
+                <div class="form-group">
+                        <input type="text" name="sekretarz[name]" placeholder="Imię i nazwisko here">
+                </div>
+                <div class="form-group">
+                        <input type="text" name="sekretarz[img]" placeholder="zdj here">
+                </div>
+                <div class="form-group">
+                        <textarea name="sekretarz[desc]" rows="10" class="form-control" maxlength='150'>Opis here</textarea>
+                </div>
+                <div class="form-group">
+                        <button class='btn btn-lg btn-primary'>Zatwierdz!</button>
+                </div> 
+            </form>
+        </div>
+    </div>
+    <div class='row'>
+        <a href='/edit'>powrót</a>
+    </div>
+</div>

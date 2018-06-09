@@ -8,7 +8,7 @@ faker.locale = "pl";
 
 
 function seedMembers(){
-    Kolo.create({
+    /*Kolo.create({
             name: "v1",
             docs: "test",
             mission: "test"
@@ -18,14 +18,14 @@ function seedMembers(){
             }else{
                 console.log("HELLO WORLD")
             }
-        });
-    /*Member.create({}, function(err, createdAchiev) {
+        });*/
+    Member.create({}, function(err, createdAchiev) {
         if(err){
             console.log(err);
         }else{
             console.log("hi im member");
         }
-    }); */
+    }); 
         
     }
     
@@ -60,7 +60,7 @@ function seedAchievements(){
 
 function seedDB(){
     seedMembers();
-    seedAchievements();
+    //seedAchievements();
 }
 
 
