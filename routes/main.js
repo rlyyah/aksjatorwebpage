@@ -87,7 +87,7 @@ router.post('/edit/zarzadedit', function(req, res) {
             console.log(err);
         }else{
             if(req.body.przewo){
-                console.log('retrieved data=', req.body.przewo)
+                console.log('retrieved data from przewo=', req.body.przewo)
                 
                 found.przewo = req.body.przewo;
                 found.save();
