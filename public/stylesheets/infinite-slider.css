@@ -2,6 +2,7 @@
 .slider-bck{
     background:white ;
     padding: 15px 0;
+    
 }
 
 .slick-slide {
@@ -9,8 +10,9 @@
 }
 
 .slick-slide img {
-    width: 80%;
+    
     margin: 0 auto;
+    max-height: 170px;
 }
 
 
@@ -92,7 +94,7 @@
     display: none;
     float: left;
 
-    height: 100%;
+
     min-height: 1px;
 }
 [dir='rtl'] .slick-slide

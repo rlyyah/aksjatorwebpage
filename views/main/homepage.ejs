@@ -1,18 +1,46 @@
-<% include ../partials/header %>
+<div style='height:100%;'>
+	<% include ../partials/header %>
 
-<!--BIG ASS FRONT IMG vv-->
-<div class="container-fluid">	
-	<div class="thumbnail top-left">
-		<% var num = Math.floor(Math.random() * 5)%>
-		<img class="main-logo" src=<%=imgUrl[num]%>>
-		<div class="container caption">
-			<h1>Aksjator <span class="whole-logo"><span class="logo-tekst">[ </span><span id="first-dot">.</span><span id="sec-dot">.</span><span id="third-dot">.</span><span class="logo-tekst"> ]</span></span> </h1> 
-			<p>Koło naukowe mechaniki konstrukcji</p>
+	<!--BIG ASS FRONT IMG vv-->
+	<div class="container-fluid">	
+		<div class="thumbnail top-left">
+			<% var num = Math.floor(Math.random() * 5)%>
+			<img class="main-logo" src=<%=imgUrl[num]%>>
+			<div class="text-center media-buttons">
+	        <ul class="list-unstyled list-inline ">
+	            <li class="list-inline-item">
+	                <button type="button" class="btn btn-primary btn-sm mx-1 round-me">
+	                	<i class="fab fa-facebook-f fb"></i>
+	                </button>
+	            </li>
+	            <li class="list-inline-item">
+	                <button type="button" class="btn btn-light btn-sm mx-1 round-me">
+	                	<i class="fab fa-youtube yt"></i>
+	                </button>            	
+	                	
+	            </li>
+	            <li class="list-inline-item">
+	                <button type="button" class="btn btn-primary btn-sm mx-1 round-me">
+	                	<i class="fab fa-linkedin-in lin"></i>
+	                </button>            	
+	                
+	            </li>
+	        </ul>
+	    </div>
+			<div class="container caption">
+				<h1>Aksjator <!--<span class="whole-logo"><span class="logo-tekst">[ </span><span id="first-dot">.</span><span id="sec-dot">.</span><span id="third-dot">.</span><span class="logo-tekst"> ]</span></span>--> </h1> 
+				<p>Koło naukowe mechaniki konstrukcji</p>
+			</div>
 		</div>
 	</div>
+	<!--BIG ASS FRONT IMG ^^ -->
+
 </div>
-<!--BIG ASS FRONT IMG ^^ -->
-<% include ../partials/sponsors %>
+		
+
+
+
+
 <div id='arrow-up'>
 	<i onclick='topFunction()' class="fas fa-angle-up"></i>
 </div>
@@ -298,7 +326,6 @@
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			        <button type="button" class="btn btn-primary">Save changes</button>
 			      </div>
 			    </div>
 			  </div>
@@ -309,10 +336,22 @@
 	</div>
 </div>
 
+<h2>Nasi partnerzy</h2>
+<div class="separator-container">
+ <div class="separator line-separator">∎</div>
+</div>
+
+<div class='mt-5'>
+	<% include ../partials/sponsors %>	
+</div>
+
+
 <h2>Zarząd koła</h2>
 <div class="separator-container">
  <div class="separator line-separator">∎</div>
 </div>
+
+
 
 <div class="container">
 	<div class="row justify-content-center mt-5 pt-3">
@@ -336,7 +375,7 @@
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			        <button type="button" class="btn btn-primary">Save changes</button>
+			        
 			      </div>
 			    </div>
 			  </div>
@@ -366,7 +405,7 @@
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			        <button type="button" class="btn btn-primary">Save changes</button>
+			        
 			      </div>
 			    </div>
 			  </div>
@@ -396,7 +435,7 @@
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			        <button type="button" class="btn btn-primary">Save changes</button>
+			        
 			      </div>
 			    </div>
 			  </div>
@@ -426,7 +465,7 @@
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			        <button type="button" class="btn btn-primary">Save changes</button>
+			        
 			      </div>
 			    </div>
 			  </div>
@@ -439,73 +478,78 @@
 	
 </div>
 
-
-
-<h2>Opiekunowie</h2>
-<div class="separator-container">
- <div class="separator line-separator">∎</div>
-</div>
-
-<div class="container">
-	<div class="row  justify-content-center mt-5 pt-3 mb-2">
-		<div class="col-md-3">
-						<!-- Button trigger modal -->
-			<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#photoModal5" style=' background-image: url(http://santetotal.com/wp-content/uploads/2014/05/default-user.png); background-size: 105%;'>
-			  
-			</button>
-			<!-- Modal -->
-			<div class="modal fade" id="photoModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-			  <div class="modal-dialog modal-dialog-centered" role="document">
-			    <div class="modal-content" id="przewo">
-			      <div class="modal-header" >
-			        <h3 class="modal-title" id="exampleModalLongTitle">Dr inż Henryk Ciurej</h3>
-			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			          <span aria-hidden="true">&times;</span>
-			        </button>
-			      </div>
-			      <div class="modal-body">
-			        <p>Destroy couch and sometimes switches in french and say "miaou" just because well why not so lick the other cats. Poop on grasses eat the fat cats food eat an easter feather as if it were a bird then burp victoriously, but tender prance along on top of the garden fence, annoy the neighbor's dog and make it bark meow, litter kitter kitty litty little kitten big roar roar feed me. Head nudges . Decide to want nothing to do with my owner today shake treat bag, and bleghbleghvomit my furball really tie the room together, but scratch me there, elevator butt sit in box sit in a box for hours. Meow meow, i tell my human. Vommit food and eat it again cereal boxes make for five star accommodation and fall asleep on the washing machine lick the other cats flop over.</p>
-			      </div>
-			      <div class="modal-footer">
-			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			        <button type="button" class="btn btn-primary">Save changes</button>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-			
-			
-			<h4 class="mt-2">Dr inż Henryk Ciurej</h4>
-		</div>
-			
-		<div class="col-md-3">
-			<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#photoModal6" style=' background-image: url(http://santetotal.com/wp-content/uploads/2014/05/default-user.png); background-size: 105%;'>
-			  
-			</button>
-			<!-- Modal -->
-			<div class="modal fade" id="photoModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-			  <div class="modal-dialog modal-dialog-centered" role="document">
-			    <div class="modal-content" id="przewo">
-			      <div class="modal-header" >
-			        <h3 class="modal-title" id="exampleModalLongTitle">Mgr inż Michał Betlej</h3>
-			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			          <span aria-hidden="true">&times;</span>
-			        </button>
-			      </div>
-			      <div class="modal-body">
-			        <p>Destroy couch and sometimes switches in french and say "miaou" just because well why not so lick the other cats. Poop on grasses eat the fat cats food eat an easter feather as if it were a bird then burp victoriously, but tender prance along on top of the garden fence, annoy the neighbor's dog and make it bark meow, litter kitter kitty litty little kitten big roar roar feed me. Head nudges . Decide to want nothing to do with my owner today shake treat bag, and bleghbleghvomit my furball really tie the room together, but scratch me there, elevator butt sit in box sit in a box for hours. Meow meow, i tell my human. Vommit food and eat it again cereal boxes make for five star accommodation and fall asleep on the washing machine lick the other cats flop over.</p>
-			      </div>
-			      <div class="modal-footer">
-			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			        <button type="button" class="btn btn-primary">Save changes</button>
-			      </div>
-			    </div>
-			  </div>
-			</div>	
-			<h4 class="mt-2">Mgr inż Michał Betlej</h4>		
-		</div>
-	</div>
+<section id='opiekunowie'>
 	
-</div>
+	<h2>Opiekunowie</h2>
+	
+	<div class="separator-container">
+		<div class="separator line-separator">∎</div>
+	</div>
+
+	<div class="container">
+		<div class="row  justify-content-center mt-5 pt-3 mb-2">
+			<div class="col-md-3">
+							<!-- Button trigger modal -->
+				<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#photoModal5" style=' background-image: url(http://santetotal.com/wp-content/uploads/2014/05/default-user.png); background-size: 105%;'>
+				  
+				</button>
+				<!-- Modal -->
+				<div class="modal fade" id="photoModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+				  <div class="modal-dialog modal-dialog-centered" role="document">
+				    <div class="modal-content" id="przewo">
+				      <div class="modal-header" >
+				        <h3 class="modal-title" id="exampleModalLongTitle">Dr inż Henryk Ciurej</h3>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				        <p>Destroy couch and sometimes switches in french and say "miaou" just because well why not so lick the other cats. Poop on grasses eat the fat cats food eat an easter feather as if it were a bird then burp victoriously, but tender prance along on top of the garden fence, annoy the neighbor's dog and make it bark meow, litter kitter kitty litty little kitten big roar roar feed me. Head nudges . Decide to want nothing to do with my owner today shake treat bag, and bleghbleghvomit my furball really tie the room together, but scratch me there, elevator butt sit in box sit in a box for hours. Meow meow, i tell my human. Vommit food and eat it again cereal boxes make for five star accommodation and fall asleep on the washing machine lick the other cats flop over.</p>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				
+				
+				<h4 class="mt-2">Dr inż Henryk Ciurej</h4>
+			</div>
+				
+			<div class="col-md-3">
+				<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#photoModal6" style=' background-image: url(http://santetotal.com/wp-content/uploads/2014/05/default-user.png); background-size: 105%;'>
+				  
+				</button>
+				<!-- Modal -->
+				<div class="modal fade" id="photoModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+				  <div class="modal-dialog modal-dialog-centered" role="document">
+				    <div class="modal-content" id="przewo">
+				      <div class="modal-header" >
+				        <h3 class="modal-title" id="exampleModalLongTitle">Mgr inż Michał Betlej</h3>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				        <p>Destroy couch and sometimes switches in french and say "miaou" just because well why not so lick the other cats. Poop on grasses eat the fat cats food eat an easter feather as if it were a bird then burp victoriously, but tender prance along on top of the garden fence, annoy the neighbor's dog and make it bark meow, litter kitter kitty litty little kitten big roar roar feed me. Head nudges . Decide to want nothing to do with my owner today shake treat bag, and bleghbleghvomit my furball really tie the room together, but scratch me there, elevator butt sit in box sit in a box for hours. Meow meow, i tell my human. Vommit food and eat it again cereal boxes make for five star accommodation and fall asleep on the washing machine lick the other cats flop over.</p>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+				      </div>
+				    </div>
+				  </div>
+				</div>	
+				<h4 class="mt-2">Mgr inż Michał Betlej</h4>		
+			</div>
+		</div>
+		
+	</div>	
+	
+</section>
+
+
 
 <% include ../partials/footer %>

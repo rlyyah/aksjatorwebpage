@@ -1,0 +1,45 @@
+<% include ../partials/header %>
+<% include ../partials/dzialalnosc/photolist %>
+
+
+
+<div class="container">
+    
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-9 text-center"><h3 class="header-content mt-5"> Projekty naukowe </h3></div>
+	</div>
+	
+	<div class="row mt-3">
+		<% include ../partials/dzialalnosc/menu %>
+		
+		<div class="col-md-9 main-display">
+			
+			<div class="content">
+			    <% for(var i=achievements.length-1; i>0; i--){%>
+				    <div class="row mt-5">
+				       <div class="image col-lg-3">
+	    			        <img src="<%=achievements[i].img%>">
+	    			    </div>
+	    			    <div class="achievement col-lg-9">
+	        			    <div class="title">
+	        			        <a href="/kolo/osiagniecia/<%=achievements[i]._id%>" class="lead"><%=achievements[i].title%></a>
+	        			    </div>
+	        			    <div class="extra">
+	        			        <span><strong><%=achievements[i].date.toDateString()%></strong></span>
+	        			    </div>
+	        			    <div class="description">
+	        			        <p><%-achievements[i].content.substring(0,100)%>...</p>
+	        			    </div>
+	
+	        			    <a href="/kolo/osiagniecia/<%=achievements[i]._id%>" class="mb-3 btn btn-primary btn-md">Czytaj więcej</a>
+	    			    </div> 
+				    </div>			    
+			    <% }%>
+			    
+			</div>
+		</div>
+	</div>
+</div>
+
+<% include ../partials/footer %>

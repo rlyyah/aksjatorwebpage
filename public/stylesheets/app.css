@@ -215,6 +215,12 @@ box-shadow: 1.5px 4.5px 7px 0px rgba(0,0,0,0.75);
     min-height: 300px;
 }
 
+.media-buttons{
+    position:absolute;
+    top: 8%;
+    left:80%;
+}
+
 /* MAINPHOTO*/
 /*GALLERY CAROUSEL*/
 
@@ -472,7 +478,8 @@ h4{
    .stylish-color-dark{
         
     background-position: bottom;
-   	background-image: url(https://i.imgur.com/BJ0ZKhC.jpg);
+   	background-image: url(https://i.imgur.com/tBI8cRW.png);
+   	
    	background-size: 100%;
    	background-repeat: no-repeat;
    }

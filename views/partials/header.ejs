@@ -29,7 +29,17 @@
 			
 			<!-- NavbarHeader -->
 			<div class="navbar-header">
-		    	<span class="navbar-brand mb-0 h1"><a href="https://www.agh.edu.pl/"><img width="55px" src="https://i2.wp.com/home.agh.edu.pl/~phajder/wp-content/uploads/images/cropped-Znak_graficzny_AGH.png?fit=878%2C1655"></a><a href="http://www.wgig.agh.edu.pl/"><img src="http://www.wgig.agh.edu.pl/logo/WGiG_LOGOr_poziom_RGB.jpg" width="280px"></a></span>
+		    	<span class="navbar-brand mb-0 h1">
+		    		<a href="https://www.agh.edu.pl/">
+		    			<img width="55px" src="https://i2.wp.com/home.agh.edu.pl/~phajder/wp-content/uploads/images/cropped-Znak_graficzny_AGH.png?fit=878%2C1655">
+		    		</a>
+		    		<a href="http://www.wgig.agh.edu.pl/">
+		    			<img class='ml-3' src="https://i.imgur.com/FDmWv9H.png" width="82px">
+		    		</a>
+		    		<a href="/">
+		    			<img src="https://i.imgur.com/vuh5ACE.png" width="110px">
+		    		</a>
+		    	</span>
 			</div>
 			<!-- NavbarHeader -->
 			<button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,29 +58,40 @@
 				    <div class="dropdown-menu">
 				      <a class="dropdown-item" href="/kolo/misja">Koło</a>
 				      <a class="dropdown-item" href="/kolo/osiagniecia">Nasze osiągnięcia</a>
-				      <a class="dropdown-item" href="/kolo/osiagniecia">Władze</>
+				      <a class="dropdown-item" href="/#opiekunowie">Władze</a>
 				      <a class="dropdown-item" href="/kolo/czlonkowie">Członkowie</a>
 				      <a class="dropdown-item" href="/kolo/dokumenty">Dokumenty</a>
 				      <a class="dropdown-item" href="/kolo/dokumenty">Dołącz do nas</a>
 				      <div class="dropdown-divider"></div>
 				      <a class="dropdown-item" href="" onclick="toBottom()">Kontakt</a>
 				    </div>
+				    </li>
+				    <li class="nav-item dropdown">
+				    <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Akutalności</a>
+				    <div class="dropdown-menu">
+				      <a class="dropdown-item" href="/dzialalnosc/projektynaukowe">Projekty naukowe</a>
+				      <a class="dropdown-item" href="/dzialalnosc/konferencje">Konferencje</a>
+				      <a class="dropdown-item" href="/dzialalnosc/publikacjee">Publikacje</a>
+				      <a class="dropdown-item" href="/dzialalnosc/dydaktyczn">Działalność dydaktyczna</a>
+				      <div class="dropdown-divider"></div>
+				      <a class="dropdown-item" href="/dzialalnosc/aktualnosci">Aktualności</a>
+				    </div>
+				  </li>
 				  <li class="nav-item dropdown">
 				    <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Działaność</a>
 				    <div class="dropdown-menu">
-				      <a class="dropdown-item" href="przyklad.html">Projekty naukowe</a>
-				      <a class="dropdown-item" href="przyklad.html">Konferencje</a>
-				      <a class="dropdown-item" href="przyklad.html">Publikacje</a>
-				      <a class="dropdown-item" href="przyklad.html">Działalność dydaktyczna</a>
-				      <div class="dropdown-divider"></div>
-				      <a class="dropdown-item" href="przyklad.html">Aktualności</a>
+				      <a class="dropdown-item" href="/dzialalnosc/projektynaukowe">Projekty naukowe</a>
+				      <a class="dropdown-item" href="/dzialalnosc/konferencje">Konferencje</a>
+				      <a class="dropdown-item" href="/dzialalnosc/publikacjee">Publikacje</a>
+				      <a class="dropdown-item" href="/dzialalnosc/dydaktyczn">Działalność dydaktyczna</a>
+				      
 				    </div>
 				  </li>
 				  <li class="nav-item dropdown">
 				    <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Współpraca</a>
 				    <div class="dropdown-menu">
 				      <a class="dropdown-item" href="przyklad.html">Nasi partnerzy</a>
-				      <a class="dropdown-item" href="przyklad.html">Oferty współpracy</a>
+				      <a class="dropdown-item" href="przyklad.html">Oferta współpracy</a>
 				      <a class="dropdown-item" href="przyklad.html">Współpraca międzynarodowa</a>
 				      <div class="dropdown-divider"></div>
 				      <a class="dropdown-item" href="przyklad.html">Wspomóż nas</a>
@@ -84,14 +105,14 @@
 				      <a class="dropdown-item" href="przyklad.html">Sesje naukowe</a>
 				      <a class="dropdown-item" href="przyklad.html">Spotkania ze specjalistami</a>
 				      <a class="dropdown-item" href="przyklad.html">Wyjazdy</a>
-				      <a class="dropdown-item" href="przyklad.html">inne</a>
+				      <a class="dropdown-item" href="przyklad.html">Inne</a>
 				    </div>
 				  </li>
 				  <li class="nav-item">
 				    <a class="nav-link" id='contact-button'  role="button" onclick="toBottom()">Kontakt</a>
 				  </li>
 				</ul>
-				<ul class="ml-auto social-buttons-container">
+				<!--<ul class="ml-auto social-buttons-container">
 					<li class="mt-3">
 		                <a href="https://www.facebook.com/aksjator/" class="btn btn-primary btn-sm mx-1 nav-social-buttons">
 		                	<i class="fab fa-facebook-f fbfb"></i>
@@ -109,9 +130,9 @@
 		                </a>            	
 		                
 		            </li>					
-				</ul>
+				</ul>-->
 				<ul class="navbar-nav">
-					<li class="nav-item"><span class="navbar-brand mb-0 h1"><a href="/"><img src="https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/24176825_133510807297357_6254601794481372147_n.png?_nc_cat=0&oh=91e60f8f690a68919071508bf50ae0cb&oe=5B74EA0E" width="120px"></a></span></li>
+					<!--<li class="nav-item"><span class="navbar-brand mb-0 h1"><a href="/"><img src="https://i.imgur.com/vuh5ACE.png" width="120px"></a></span></li>-->
 				</ul>
 				
 
