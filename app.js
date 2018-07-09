@@ -42,8 +42,8 @@ passport.deserializeUser(User.deserializeUser());
 
 mongoose.connect("mongodb://aksjator:aksjatorp4ssword@ds131800.mlab.com:31800/aksjator");
 //seedDB();
-/*mongoose.connect("mongodb://localhost/wgig_page");*/
-
+/*mongoose.connect("mongodb://localhost/wgig_page");
+*/
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));

@@ -1,3 +1,8 @@
+#container {
+    margin: 0 auto;
+    max-width: 2500px /* A really big width */
+}
+
 
 body {
   -webkit-user-select: none;
@@ -213,6 +218,7 @@ box-shadow: 1.5px 4.5px 7px 0px rgba(0,0,0,0.75);
 .main-logo{
     width:100%;
     min-height: 300px;
+    min-width: 1000px;
 }
 
 .media-buttons{
@@ -489,22 +495,22 @@ h4{
 
    .fb{
    	color: white;  
-   	font-size: 3em; }
+   	font-size: 1.7em; }
    	.lin{
 	color: white;  
 
-   	font-size: 3em;
+   	font-size: 1.7em;
    	}
    	.yt{
    		color:red;
    		
-   		font-size: 3em;
+   		font-size: 1.5em;
    		padding: 10% 0;
    	}
    	.round-me{
    		border-radius: 50%;
-   		width: 70px;
-   		height: 70px;
+   		width: 40px;
+   		height: 40px;
    		-webkit-box-shadow: 3px 9px 14px -4px rgba(0,0,0,0.75);
 -moz-box-shadow: 3px 9px 14px -4px rgba(0,0,0,0.75);
 box-shadow: 3px 9px 14px -4px rgba(0,0,0,0.75);
@@ -514,6 +520,35 @@ box-shadow: 3px 9px 14px -4px rgba(0,0,0,0.75);
 -moz-box-shadow: 3px 9px 14px 0px rgba(0,0,0,0.75);
 box-shadow: 3px 9px 14px 0px rgba(0,0,0,0.75);
    	}
+   	
+   	   .fbup{
+   	color: white;  
+   	font-size: 80%; }
+   	.linup{
+	color: white;  
+
+   	font-size: 70%;
+   	}
+   	.ytup{
+   		color:red;
+   		font-size: 75%;
+ 
+   	}
+   	.round-meup{
+   		border-radius: 50%;
+   		width: 33px;
+   		height: 33px;
+   		-webkit-box-shadow: 3px 9px 14px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 3px 9px 14px -4px rgba(0,0,0,0.75);
+box-shadow: 3px 9px 14px -4px rgba(0,0,0,0.75);
+   	}
+   	.round-meup:hover{
+   		-webkit-box-shadow: 3px 9px 14px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 3px 9px 14px 0px rgba(0,0,0,0.75);
+box-shadow: 3px 9px 14px 0px rgba(0,0,0,0.75);
+   	}
+   	
+   	
    	.testujemy-fonta{
  
    		font-size: 1em;
@@ -680,21 +715,19 @@ table.center{
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) { 
-.whole-logo{
-  font-size: 10px;
-  
- 
-}
+
+.footer-kontakt{
+       color:black;
+   }
     
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) { 
-.whole-logo{
-  font-size: 0.5em;
-  
- 
-}
+
+.footer-kontakt{
+       color:black;
+   }
 
     }
 
