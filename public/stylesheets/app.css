@@ -1,5 +1,5 @@
 #container {
-    margin: 0 auto;
+    
     max-width: 2500px /* A really big width */
 }
 
@@ -14,7 +14,13 @@ body {
 /*  USER CANNOT HIGHLIGHT THE TEXT*/
 
 
+
+
 /* NAVBAR NAVBAR NAVBAR NAVBAR */
+
+.navbar-brand a {
+   text-decoration: none; 
+}
 
 
 div.dropdown-menu.show{
@@ -28,10 +34,10 @@ div.dropdown-menu.show{
     display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
     z-index: 99; /* Make sure it does not overlap */
-    bottom: 10%;
-    right: 5%;
+    bottom: 5%;
+    right: 3%;
     color: #c5a47e;
-    font-size: 4em;
+    font-size: 5.5em;
 }
 #arrow-up:hover{
     color:#b4a36d;
@@ -105,17 +111,33 @@ div ul li a{
 }
 div ul li a:hover{
 	
-	color: #c5a47e;
+	color: #92714b;
 	text-decoration: none;
 
 }
+
+.dropdown-menu{
+    border: 1px solid #54585c;
+    padding-bottom: 0;
+}
+
+.dropdown-divider{
+    border-top: 1px solid #999;  
+    margin:0;
+    padding:0; 
+}
+.dropdown-item:hover{
+    background: #777;
+   
+}
+
 
 #contact-button{
     color:black;
     transition: color 0.5s ease-out;
 }
 #contact-button:hover{
-     color: #c5a47e;
+     color: #92714b;
      cursor: pointer;
 	text-decoration: none;  
 }
@@ -219,6 +241,7 @@ box-shadow: 1.5px 4.5px 7px 0px rgba(0,0,0,0.75);
     width:100%;
     min-height: 300px;
     min-width: 1000px;
+    object-fit: cover;
 }
 
 .media-buttons{
@@ -245,6 +268,7 @@ background: rgba(0, 0, 0, 0.5);
       transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
       border: 1px solid black;
+      
 }
 
 
@@ -478,9 +502,7 @@ h4{
    	color:#fff;
    	font-size: 0.8em;
    }
-   .footer-kontakt{
-       text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-   }
+  
    .stylish-color-dark{
         
     background-position: bottom;
@@ -549,16 +571,18 @@ box-shadow: 3px 9px 14px 0px rgba(0,0,0,0.75);
    	}
    	
    	
-   	.testujemy-fonta{
- 
-   		font-size: 1em;
-   	}
+   	
    	#map{
    	    width: 95%;
    	    height: 80%;
    	}
    	#map img {
    	    width: 70%;
+   	}
+   	
+   	.page-footer{
+   	    max-width: 2500px;
+      margin: 0 auto;
    	}
 
 
@@ -576,6 +600,8 @@ box-shadow: 3px 9px 14px 0px rgba(0,0,0,0.75);
 .sponsors-color{
     height: 10px;
     background:#c5a47e;
+    max-width: 2500px;
+    margin: 0 auto;
 }
 
 
@@ -709,33 +735,108 @@ table.center{
 }
 /*adm*/
 
+@media (min-width: 320px){
+    .footer-kontakt h5{
+    color: black;
+    text-shadow: none;
+    text-align: center;
+}   
 
-// Extra small devices (portrait phones, less than 576px)
-// No media query since this is the default in Bootstrap
+.newsletter h5{
+ 
+   		font-size: 1em;
+   		color: black;
+}
+.newsletter{
+    margin-bottom: 30%;
+}
+.newsletter form button{
+    color: #777;
+    outline-color: #777;
+}
+.newsletter form button:hover{
+    color: white;
 
-// Small devices (landscape phones, 576px and up)
+    background:#666;
+}
+
+
+}
+
+
 @media (min-width: 576px) { 
 
-.footer-kontakt{
-       color:black;
-   }
-    
+.main-logo{
+    width:100%;
+    min-height: 300px;
+    min-width: 576px;
+    object-fit: cover;
 }
 
-// Medium devices (tablets, 768px and up)
+}
+
+
 @media (min-width: 768px) { 
 
-.footer-kontakt{
-       color:black;
-   }
+.newsletter h5{
+ 
+   		font-size: 1em;
+   		color: white;
+}
 
-    }
+.newsletter{
+    margin-bottom: 0;
+}
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) { 
+.newsletter form button{
+    color: white;
+    outline-color: white;
+}
+.newsletter form button:hover{
+    color: black;
+    background-color: white;
+}
+
+.main-logo{
+    width:100%;
+    min-height: 300px;
+    min-width: 768px;
+    object-fit: cover;
+}
+
 
     
 }
 
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... }
+
+@media (min-width: 992px) { 
+    
+.footer-kontakt h5{
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    color: white;
+    text-align: left;
+}
+
+.main-logo{
+    width:100%;
+    min-height: 300px;
+    min-width: 992px;
+    object-fit: cover;
+}
+    
+}
+
+
+@media (min-width: 1200px) { 
+    
+    
+}
+
+
+.footer-kontakt{
+
+       
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    color: white;
+
+   }
