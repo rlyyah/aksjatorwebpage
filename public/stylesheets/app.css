@@ -764,6 +764,25 @@ table.center{
 }
 
 
+/* AKTUALNOSCI */
+
+.aktualosci{
+    margin-top:3em;
+    border-bottom: 1px solid #777;
+}
+
+.col-md-9 h2{
+    margin-top: 0;
+}
+.col-md-3 img{
+    margin: 3em 0;
+}
+
+
+/* AKTUALNOSCI */
+
+
+
 @media (min-width: 576px) { 
 
 .main-logo{

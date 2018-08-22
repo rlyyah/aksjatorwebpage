@@ -46,6 +46,11 @@ router.get("/", function(req, res){
     
 });
 
+router.get('/aktualnosci', (req, res) => {
+    res.render('aktualnosci/aktualnosci')
+});
+
+
 router.get("/edit", isLoggedIn, function(req, res) {
    res.render("main/admin-panel"); 
 });
@@ -170,6 +175,7 @@ router.get("/logout", function(req, res) {
     res.redirect("/");
     
 });
+
 
 
 
