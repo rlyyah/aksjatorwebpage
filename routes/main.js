@@ -56,7 +56,16 @@ router.get("/edit", isLoggedIn, function(req, res) {
 });
 
 router.get('/edit/homepageedit', function(req, res) {
-    res.render('main/homepageedit');
+    homepage.findOne({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.render('main/homepageedit', {homepageImg: found});
+        }
+    })
+    
+    
+    
 })
 
 router.post('/edit/homepageedit', function(req, res) {

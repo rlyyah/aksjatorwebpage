@@ -4,7 +4,7 @@ var mongoose = require("mongoose");
 var achievementSchema = new mongoose.Schema({
    title: String,
    content: String,
-   date: {type: Date, default: Date.now},
+   date: String,
    img: String
 });
 

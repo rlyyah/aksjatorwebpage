@@ -27,10 +27,10 @@
 			        </tr>
 			    </thead>
 			    <tbody>
-			        <% members.students.forEach(function(mem){%>
+			        <% members[0].forEach(function(stud){%>
 				        <tr>
 				        	<td class="text-center">
-				        	    <%=mem.name%>
+				        	    <%=stud%>
 				        	</td>
 				        </tr>
 			        <% });%>
@@ -45,10 +45,10 @@
 			        </tr>
 			    </thead>
 			    <tbody>
-			        <% members.graduates.forEach(function(mem){%>
+			        <% members[1].forEach(function(grad){%>
 				        <tr width="100%">
 				        	<td class="text-center">
-				        	    <%=mem.name%>
+				        	    <%=grad%>
 				        	</td>
 				        </tr>
 			        <% });%>

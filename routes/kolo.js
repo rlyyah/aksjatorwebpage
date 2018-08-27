@@ -5,6 +5,45 @@ router = express.Router();
 var Achievement = require("../models/achievements"),
     Kolo = require("../models/kolo"),
     Members = require("../models/members_two");
+    
+    
+function alphabetizer(names) {
+  return names.map(function(name) {
+    var full = name.split(" "),
+      last = full.pop();
+    return last + " " + full.join(" ");
+  }).sort();
+}    
+    
+/*var arrOfMemb = [];
+Members.findOne({}, function(err, foundMembers) {
+       if(err){
+          console.log(err);
+       }else{
+           var arrOfStud = [];
+           foundMembers.students.forEach((student)=>{
+               console.log(student.name);
+               
+               arrOfStud.push(student.name);
+               
+            
+           })
+           var fixedArrStud = alphabetizer(arrOfStud);
+           
+          
+          var arrOfGrad = []; 
+          foundMembers.graduates.forEach((graduate)=>{
+                arrOfGrad.push(graduate.name);   
+           })
+           var fixedArrGrad = alphabetizer(arrOfGrad);
+           
+           
+           arrOfMemb.push(fixedArrStud)
+           arrOfMemb.push(fixedArrGrad)
+           console.log(arrOfMemb);
+       }
+   }); 
+*/
 
 
 router.get("/misja", function(req, res){
@@ -32,7 +71,7 @@ router.put("/misja", isLoggedIn, function(req, res) {
       }else{
          foundKolo.missions = req.body.misja;
          foundKolo.save();
-         res.redirect("/kolo/misja");
+         res.redirect("/kolo/misja/edit");
       }
    });
 });
@@ -43,7 +82,29 @@ router.get("/czlonkowie", function(req, res){
        if(err){
           console.log(err);
        }else{
-          res.render("kolo/czlonkowie", {members: foundMembers});
+           var arrOfMembs = [];
+          var arrOfStud = [];
+           foundMembers.students.forEach((student)=>{
+               console.log(student.name);
+               
+               arrOfStud.push(student.name);
+               
+            
+           })
+           var fixedArrStud = alphabetizer(arrOfStud);
+           
+          
+          var arrOfGrad = []; 
+          foundMembers.graduates.forEach((graduate)=>{
+                arrOfGrad.push(graduate.name);   
+           })
+           var fixedArrGrad = alphabetizer(arrOfGrad);
+           
+           
+           arrOfMembs.push(fixedArrStud)
+           arrOfMembs.push(fixedArrGrad)
+          
+          res.render("kolo/czlonkowie", {members: arrOfMembs});
        }
    });
 });
@@ -214,6 +275,10 @@ router.put("/dokumenty", isLoggedIn, function(req, res) {
       }
    }); 
 });
+
+router.get('/dolacz', (req, res)=>{
+    res.render('kolo/dolacz');
+})
 
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()){

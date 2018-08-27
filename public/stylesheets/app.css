@@ -402,6 +402,16 @@ h4{
   border-radius: 50%;
 }
 
+.col-md-3 > a.btn-secondary{
+  height: 150px;
+  width: 150px;
+  background-repeat: no-repeat;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-position: center;
+}
+
 
 /*photo modals*/
 
@@ -502,6 +512,8 @@ h4{
    	color:#fff;
    	font-size: 0.8em;
    }
+   
+   
   
    .stylish-color-dark{
         
@@ -531,8 +543,8 @@ h4{
    	}
    	.round-me{
    		border-radius: 50%;
-   		width: 40px;
-   		height: 40px;
+   		width: 46px;
+   		height: 46px;
    		-webkit-box-shadow: 3px 9px 14px -4px rgba(0,0,0,0.75);
 -moz-box-shadow: 3px 9px 14px -4px rgba(0,0,0,0.75);
 box-shadow: 3px 9px 14px -4px rgba(0,0,0,0.75);
@@ -545,21 +557,21 @@ box-shadow: 3px 9px 14px 0px rgba(0,0,0,0.75);
    	
    	   .fbup{
    	color: white;  
-   	font-size: 80%; }
+   	font-size: 120%; }
    	.linup{
 	color: white;  
 
-   	font-size: 70%;
+   	font-size: 105%;
    	}
    	.ytup{
    		color:red;
-   		font-size: 75%;
+   		font-size: 112.5%;
  
    	}
    	.round-meup{
    		border-radius: 50%;
-   		width: 33px;
-   		height: 33px;
+   		width: 48px;
+   		height: 48px;
    		-webkit-box-shadow: 3px 9px 14px -4px rgba(0,0,0,0.75);
 -moz-box-shadow: 3px 9px 14px -4px rgba(0,0,0,0.75);
 box-shadow: 3px 9px 14px -4px rgba(0,0,0,0.75);
@@ -801,20 +813,27 @@ table.center{
  
    		font-size: 1em;
    		color: white;
-}
-
-.newsletter{
-    margin-bottom: 0;
+   		text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+   		font-weight: 700;
 }
 
 .newsletter form button{
     color: white;
     outline-color: white;
-}
-.newsletter form button:hover{
+    font-weight: 900;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+    
+    }
+    .newsletter form button:hover{
     color: black;
     background-color: white;
+    }
+
+.newsletter{
+    margin-bottom: 0;
 }
+
+
 
 .main-logo{
     width:100%;
@@ -855,7 +874,7 @@ table.center{
 .footer-kontakt{
 
        
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
     color: white;
 
    }
