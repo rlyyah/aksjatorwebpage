@@ -29,7 +29,7 @@
         
         <div class='row'>
             <% homepageImg.img.forEach(function(img, index){%>
-                <form action="/homepage/<%=index%>?_method=DELETE" method="POST">
+                <form action="/homepage/galeria/<%=index%>?_method=DELETE" method="POST">
                     <h5><%=index%></h5>
                     <button>delete</button>
                 </form>

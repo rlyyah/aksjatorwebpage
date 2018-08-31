@@ -26,6 +26,14 @@ var homepage = require("../models/homepage");
     }
 })*/
 
+homepage.findOne({}, (err, found)=>{
+    if(err){console.log(err)}
+    else{
+        console.log('found.mainPhotos: ',found.mainPhotos);
+
+    }
+});
+
 
 //====================
 //======ROUTES========
@@ -40,7 +48,7 @@ router.get("/", function(req, res){
             console.log(err);
         }else{
             res.render("main/homepage", {imgUrl: imgUrl, homepageImg: found});
-        
+            console.log(found.mainPhotos);
         }
     })
     
@@ -63,9 +71,6 @@ router.get('/edit/homepageedit', function(req, res) {
             res.render('main/homepageedit', {homepageImg: found});
         }
     })
-    
-    
-    
 })
 
 router.post('/edit/homepageedit', function(req, res) {
@@ -131,6 +136,67 @@ router.post('/edit/zarzadedit', function(req, res) {
                 res.redirect('/edit/zarzadedit');
                 alert('sth went wrong!');
             }
+        }
+    })
+})
+
+router.get('/edit/okole', (req,res)=>{
+    homepage.findOne({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.render('main/okole', {okole: found.okole})
+        }
+    })
+})
+
+router.put('/okole', (req, res)=>{
+     homepage.findOne({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            found.okole.text = req.body.okole;
+            found.save();
+            res.redirect('/edit/okole');
+        }
+    })
+})
+
+router.get('/edit/zdj', (req, res)=>{
+    homepage.findOne({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.render('main/zdj', {zdj: found})
+        }
+    })
+});
+router.post('/zdj', (req, res)=>{
+    homepage.findOne({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            var zdjec = req.body.zdj;
+            console.log(zdjec)
+            found.mainPhotos.push(zdjec);
+            found.save();
+            res.redirect('/edit/zdj');
+        }
+    })
+})
+
+
+
+
+router.delete('/homepage/galeria/:index', isLoggedIn, (req, res)=>{
+    var index = Number(req.body.index);
+    homepage.findOne({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            found.img.splice(index, 1);
+            found.save();
+            res.redirect('/edit/homepageedit');
         }
     })
 })

@@ -14,6 +14,14 @@ function alphabetizer(names) {
     return last + " " + full.join(" ");
   }).sort();
 }    
+
+function nameFirst(names){
+    return names.map((name)=>{
+        var full = name.split(" "),
+        first = full.pop();
+        return first + ' ' + full.join(' ');
+    })
+}
     
 /*var arrOfMemb = [];
 Members.findOne({}, function(err, foundMembers) {
@@ -92,17 +100,18 @@ router.get("/czlonkowie", function(req, res){
             
            })
            var fixedArrStud = alphabetizer(arrOfStud);
-           
-          
+           var nameFirstArrStud = nameFirst(fixedArrStud);
+        
           var arrOfGrad = []; 
           foundMembers.graduates.forEach((graduate)=>{
                 arrOfGrad.push(graduate.name);   
            })
            var fixedArrGrad = alphabetizer(arrOfGrad);
+           var nameFirstArrGrad = nameFirst(fixedArrGrad);
            
            
-           arrOfMembs.push(fixedArrStud)
-           arrOfMembs.push(fixedArrGrad)
+           arrOfMembs.push(nameFirstArrStud);
+           arrOfMembs.push(nameFirstArrGrad);
           
           res.render("kolo/czlonkowie", {members: arrOfMembs});
        }
@@ -158,11 +167,13 @@ router.delete("/czlonkowie/manage/graduates/:id", isLoggedIn, function(req, res)
           console.log(err);
        } else{
           found.graduates.splice(index, 1);
-          found.save();
+          found.save(); 
           res.redirect("/kolo/czlonkowie/manage");
        } 
     });
 });
+
+
 
 router.get("/osiagniecia", function(req, res){
    Achievement.find({}, function(err, achiev){
@@ -209,7 +220,7 @@ router.post("/osiagniecia", isLoggedIn, function(req, res){
          console.log(err);
       }else{
          console.log("Achievment added");
-         res.redirect("/kolo/osiagniecia");
+         res.redirect("/kolo/osiagniecia/add");
       }
    });
 });

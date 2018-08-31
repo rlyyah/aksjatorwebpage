@@ -25,7 +25,14 @@ var homepageSchema = new mongoose.Schema({
         name: String,
         img: String,
         desc: String
-    }
+    },
+    okole:{
+        text: {type:String, default: "test"}
+    },
+    mainPhotos:[String],
+    partners:[{
+        url: String
+    }]
 });
 
 module.exports = mongoose.model('homepage', homepageSchema);
