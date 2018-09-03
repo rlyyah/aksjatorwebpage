@@ -29,10 +29,7 @@ var homepageSchema = new mongoose.Schema({
     okole:{
         text: {type:String, default: "test"}
     },
-    mainPhotos:[String],
-    partners:[{
-        url: String
-    }]
+    mainPhotos:[String]
 });
 
 module.exports = mongoose.model('homepage', homepageSchema);

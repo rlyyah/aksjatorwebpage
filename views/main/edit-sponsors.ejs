@@ -1,0 +1,44 @@
+<% include ../partials/bootstrap %>
+
+
+
+<div class="container">
+        <div class="row ">
+            <div class="col-12 text-center">
+                <h2>dodaj Partnerów!</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-styler mt-3">
+                <form action="/sponsors/add" method="POST">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="partners[imgUrl]" placeholder="URL obrazka">
+                    </div>
+                    <div class='form-group'>
+                        <input class="form-control" type="text" name="partners[linkUrl]" placeholder="URL do strony">    
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block">Zatwierdź</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+        <div class="row">
+            <% global.partners.forEach((partner, index)=>{ %>
+            <form action='/sponsors/delete/:index?_method=DELETE' method='POST'>
+                <a href='<%= partner.linkUrl%>'><img src='<%= partner.imgUrl%>' style='max-height:50px'></a>
+                <input type="hidden" name="index" value="<%=index%>">
+                <button>X</button>
+            </form>
+                
+            <% }) %>
+            
+        </div>
+        
+        
+        <div class="row">
+            <a href="/edit">Powrót</a>
+        </div>
+        
+</div>

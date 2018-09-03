@@ -13,7 +13,8 @@ var koloSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Achievement"
     }],
-    docs: String
+    docs: String,
+    dolacz: {type: String, default: 'dolacz do nas!'}
 });
 
 module.exports = mongoose.model("Kolo", koloSchema);

@@ -4,6 +4,8 @@ var passport = require("passport");
 var User    = require("../models/user");
 var imgUrl = require("../imgrandomizer"); 
 var homepage = require("../models/homepage");
+const Kolo = require("../models/kolo");
+const global = require("../models/global");
 
 /*homepage.create({}, function(err, created){
     if(err){console.log(err);
@@ -26,13 +28,22 @@ var homepage = require("../models/homepage");
     }
 })*/
 
-homepage.findOne({}, (err, found)=>{
+/*global.create({partners:[{urlImg: 'lol', linkImg: 'kappa'}]}, (err, created)=>{
+    if(err){
+        console.log(err);
+    }else{
+        console.log('say hi!')
+    }
+})*/
+
+
+/*homepage.findOne({}, (err, found)=>{
     if(err){console.log(err)}
     else{
         console.log('found.mainPhotos: ',found.mainPhotos);
 
     }
-});
+});*/
 
 
 //====================
@@ -47,8 +58,16 @@ router.get("/", function(req, res){
         if(err){
             console.log(err);
         }else{
-            res.render("main/homepage", {imgUrl: imgUrl, homepageImg: found});
-            console.log(found.mainPhotos);
+            global.findOne({}, (err, global)=>{
+                if(err){
+                    console.log(err);
+                }else{
+                    res.render("main/homepage", {imgUrl: imgUrl, homepageImg: found, global: global });        
+                }
+            })
+            
+            
+            
         }
     })
     
@@ -162,6 +181,7 @@ router.put('/okole', (req, res)=>{
     })
 })
 
+
 router.get('/edit/zdj', (req, res)=>{
     homepage.findOne({}, (err, found)=>{
         if(err){
@@ -185,6 +205,22 @@ router.post('/zdj', (req, res)=>{
     })
 })
 
+router.delete('/zdj/:index', (req, res)=>{
+    var index = Number(req.body.index);
+    homepage.findOne({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            
+            found.mainPhotos.splice(index, 1);
+            found.save();
+            
+            console.log('photo succesfully removed!');
+            res.redirect('/edit/zdj');
+        }
+    })
+})
+
 
 
 
@@ -195,8 +231,56 @@ router.delete('/homepage/galeria/:index', isLoggedIn, (req, res)=>{
             console.log(err);
         }else{
             found.img.splice(index, 1);
+            
             found.save();
             res.redirect('/edit/homepageedit');
+        }
+    })
+})
+
+router.get('/edit/dolacz', (req, res)=>{
+   Kolo.findOne({},(err, found)=>{
+       if(err){
+           console.log(err)
+       }else{
+           res.render('kolo/edit-dolacz', {text:found})
+       }
+   }) 
+});
+router.get('/edit/edit-sponsors', (req, res)=>{
+   global.findOne({}, (err, found)=>{
+       if(err){
+           console.log(err);
+       }else{
+           res.render('main/edit-sponsors', {global: found});
+       }
+   })
+});
+
+router.post('/sponsors/add', (req, res)=>{
+    global.findOne({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            var partnerObj = req.body.partners;
+            
+            found.partners.push(partnerObj);
+            found.save();
+            
+            res.redirect('/edit/edit-sponsors');
+        }
+    })
+});
+router.delete('/sponsors/delete/:index', (req, res)=>{
+    global.findOne({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            var index = req.body.index;
+            console.log(index);
+            found.partners.splice(index, 1);
+            found.save();
+            res.redirect('/edit/edit-sponsors')
         }
     })
 })
@@ -250,6 +334,7 @@ router.get("/logout", function(req, res) {
     res.redirect("/");
     
 });
+
 
 
 

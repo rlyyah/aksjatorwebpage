@@ -30,8 +30,9 @@
         <div class='row'>
             <% homepageImg.img.forEach(function(img, index){%>
                 <form action="/homepage/galeria/<%=index%>?_method=DELETE" method="POST">
-                    <h5><%=index%></h5>
-                    <button>delete</button>
+                    <p><img src='<%=img.url%>' width='50px' class='mr-2'></p>
+                    <input type="hidden" name="index" value="<%=index%>">
+                    <button>X</button>
                 </form>
                 
             

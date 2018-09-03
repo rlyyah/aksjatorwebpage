@@ -288,8 +288,32 @@ router.put("/dokumenty", isLoggedIn, function(req, res) {
 });
 
 router.get('/dolacz', (req, res)=>{
-    res.render('kolo/dolacz');
+    
+    Kolo.findOne({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.render('kolo/dolacz', {text: found})
+        }
+    })
 })
+
+router.put('/dolacz', (req, res)=>{
+    Kolo.findOne({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            var newDolacz = req.body.dolacz;
+            found.dolacz = newDolacz;
+            found.save();
+            res.redirect('/edit/dolacz')
+        }
+    })
+})
+
+
+
+
 
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()){
