@@ -1,8 +1,8 @@
-<% include ../partials/bootstrap %>
+<% include ../../partials/bootstrap %>
 
 <div class="container">
     <a href="/edit">powrót</a>
-    <a href="/kolo/osiagniecia/add" class="btn btn-md btn-info">DODAJ OSIĄGNIĘCIE</a>
+    <a href="/edit/osiagniecia/add" class="btn btn-md btn-info">DODAJ OSIĄGNIĘCIE</a>
     <% for(var i=achievements.length-1; i>0; i--){%>
 				    <div class="row mt-5">
 				       <div class="image col-lg-3">
@@ -18,10 +18,10 @@
 	        			    <div class="description">
 	        			        <p><%-achievements[i].content.substring(0,100)%>...</p>
 	        			    </div>
-                            	<form action="/kolo/osiagniecia/<%=achievements[i]._id%>?_method=DELETE" method="POST">
+                            	<form action="/edit/osiagniecia/<%=achievements[i]._id%>?_method=DELETE" method="POST">
                             	    <button class="mb-3 btn btn-danger btn-md">DELETE</button> 
                             	</form>
-	        			        <a href="/kolo/osiagniecia/<%=achievements[i]._id%>/edit" class="mb-3 btn btn-warning btn-md">EDIT</a>
+	        			        <a href="/edit/osiagniecia/<%=achievements[i]._id%>/edit" class="mb-3 btn btn-warning btn-md">EDIT</a>
 	    			    </div> 
 				    </div>			    
 			<% }%>

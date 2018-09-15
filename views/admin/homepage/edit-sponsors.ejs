@@ -1,4 +1,4 @@
-<% include ../partials/bootstrap %>
+<% include ../../partials/bootstrap %>
 
 
 
@@ -10,7 +10,7 @@
         </div>
         <div class="row">
             <div class="form-styler mt-3">
-                <form action="/sponsors/add" method="POST">
+                <form action="/edit/sponsors" method="POST">
                     <div class="form-group">
                         <input class="form-control" type="text" name="partners[imgUrl]" placeholder="URL obrazka">
                     </div>
@@ -26,7 +26,7 @@
         </div>
         <div class="row">
             <% global.partners.forEach((partner, index)=>{ %>
-            <form action='/sponsors/delete/:index?_method=DELETE' method='POST'>
+            <form action='/edit/sponsors/<%=index%>?_method=DELETE' method='POST'>
                 <a href='<%= partner.linkUrl%>'><img src='<%= partner.imgUrl%>' style='max-height:50px'></a>
                 <input type="hidden" name="index" value="<%=index%>">
                 <button>X</button>

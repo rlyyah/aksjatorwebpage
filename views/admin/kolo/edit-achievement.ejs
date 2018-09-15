@@ -1,4 +1,4 @@
-<% include ../partials/bootstrap %>
+<% include ../../partials/bootstrap %>
 
 
 
@@ -10,7 +10,7 @@
         </div>
         <div class="row">
             <div class="form-styler mt-3">
-                <form action="/kolo/osiagniecia/<%=achievements._id%>/?_method=PUT" method="POST">
+                <form action="/edit/osiagniecia/<%=achievements._id%>/?_method=PUT" method="POST">
                     <div class="form-group">
                         <input class="form-control" type="text" name="achievement[title]" value="<%=achievements.title%>">
                     </div>
@@ -28,7 +28,7 @@
             
         </div>
         <div class="row">
-            <a href="/kolo/osiagniecia">Powrót</a>
+            <a href="/edit/osiagniecia">Powrót</a>
         </div>
     
 </div>

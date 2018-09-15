@@ -36,7 +36,7 @@ div.dropdown-menu.show{
     z-index: 99; /* Make sure it does not overlap */
     bottom: 5%;
     right: 3%;
-    color: #c5a47e;
+    color: #DAA520;
     font-size: 5.5em;
 }
 #arrow-up:hover{
@@ -277,13 +277,11 @@ background: rgba(0, 0, 0, 0.5);
 
 
 
-.fa-glass-martini, .fa-smile, .fa-graduation-cap, .fa-angle-right, .fa-bus, .fa-american-sign-language-interpreting , .fa-child, .fa-shipping-fast, .fa-handshake, .fa-flask, .fa-donate{
+.fa-glass-martini, .fa-smile, .fa-graduation-cap , .fa-bus, .fa-american-sign-language-interpreting , .fa-child, .fa-shipping-fast, .fa-handshake, .fa-flask, .fa-donate{
 	font-size: 5em;
 	color: #c5a47e;
-
-
-
 }
+
 
 
 
@@ -386,6 +384,14 @@ h4{
 .btn-secondary{
 	width: 100%;
 	background: #3e4551;
+}
+
+.donateus{
+    background:#8A0707;
+
+}
+.donateus:hover{
+    background:#9b1818;
 }
 
 .modal-open {
@@ -542,8 +548,8 @@ h4{
    	}
    	.round-me{
    		border-radius: 50%;
-   		width: 92px;
-   		height: 92px;
+   		width: 78px;
+   		height: 78px;
    		-webkit-box-shadow: 3px 9px 14px -4px rgba(0,0,0,0.75);
 -moz-box-shadow: 3px 9px 14px -4px rgba(0,0,0,0.75);
 box-shadow: 3px 9px 14px -4px rgba(0,0,0,0.75);
@@ -556,15 +562,15 @@ box-shadow: 3px 9px 14px 0px rgba(0,0,0,0.75);
    	
    	   .fbup{
    	color: white;  
-   	font-size: 120%; }
+   	font-size: 105%; }
    	.linup{
 	color: white;  
 
-   	font-size: 105%;
+   	font-size: 90%;
    	}
    	.ytup{
    		color:red;
-   		font-size: 112.5%;
+   		font-size: 97.5%;
  
    	}
    	.round-meup{
@@ -679,6 +685,14 @@ box-shadow: 3px 9px 14px 0px rgba(0,0,0,0.75);
 
 /*KOLO*/
 /* show osiagniecie*/
+
+.post-img{
+    width:70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:20px;
+}
 .post-content{
     margin: 0 auto 15px auto;
     width: 90%;
@@ -687,6 +701,11 @@ box-shadow: 3px 9px 14px 0px rgba(0,0,0,0.75);
     text-align: justify;
 }
 /* osiagniecia*/
+
+.extra{
+    text-align: center;
+    font-size: 1.2em;
+}
 
 .content div.row{
     border-bottom: 1px solid #c5a47e;
@@ -768,7 +787,7 @@ table.center{
 .newsletter form button:hover{
     color: white;
 
-    background:#666;
+    background:#DAA520;
 }
 
 
@@ -825,7 +844,7 @@ table.center{
     }
     .newsletter form button:hover{
     color: 	black;
-    background-color: #495057;
+    background-color: #DAA520;
     }
 
 .newsletter{

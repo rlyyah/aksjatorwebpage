@@ -22,17 +22,21 @@
 			    <% for(var i=achievements.length-1; i>0; i--){%>
 				    <div class="row mt-5">
 				       <div class="image col-lg-3">
-	    			        <img src="<%=achievements[i].img%>">
-	    			    </div>
+				       	<div>
+				       		<img src="<%=achievements[i].img%>">
+				       	</div>
+				       	<div class="extra">
+	        			        <span><strong><%=achievements[i].date%></strong></span>
+	        			</div>
+    
+	    			   </div>
 	    			    <div class="achievement col-lg-9">
 	        			    <div class="title">
-	        			        <a href="/kolo/osiagniecia/<%=achievements[i]._id%>" class="lead"><%=achievements[i].title%></a>
+	        			        <p class='lead'><%=achievements[i].title%></p>
 	        			    </div>
-	        			    <div class="extra">
-	        			        <span><strong><%=achievements[i].date%></strong></span>
-	        			    </div>
+	        			    
 	        			    <div class="description">
-	        			        <p><%-achievements[i].content.substring(0,100)%>...</p>
+	        			        <p><%-achievements[i].content.substring(0,230)%>...</p>
 	        			    </div>
 	
 	        			    <a href="/kolo/osiagniecia/<%=achievements[i]._id%>" class="mb-3 btn btn-primary btn-md">Czytaj więcej</a>

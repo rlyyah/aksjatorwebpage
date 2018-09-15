@@ -1,4 +1,4 @@
-<% include ../partials/bootstrap %>
+<% include ../../partials/bootstrap %>
 
 
 
@@ -10,7 +10,7 @@
         </div>
         <div class="row">
             <div class="form-styler mt-3">
-                <form action="/zdj" method="POST">
+                <form action="/edit/zdj" method="POST">
                     <div class="form-group">
                         <input class="form-control" type="text" name="zdj" placeholder="URL">
                     </div>
@@ -27,7 +27,7 @@
         
         <div class='row'>
             <% zdj.mainPhotos.forEach((url, index)=>{%>
-            <form action='/zdj/<%=index%>?_method=DELETE' method='POST'>
+            <form action='/edit/zdj/<%=index%>?_method=DELETE' method='POST'>
                 <input type="hidden" name="index" value="<%=index%>">
                 <p><img src='<%=url%>' width='50px' class='mr-2'></p>
                 <button>X</button>
