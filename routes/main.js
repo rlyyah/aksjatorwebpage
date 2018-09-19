@@ -5,7 +5,8 @@ const express = require("express"),
 const imgUrl = require("../imgrandomizer"), 
       homepage = require("../models/homepage"),
       global = require("../models/global"),
-      User = require("../models/user")
+      User = require("../models/user"),
+      News = require("../models/news");
 
 /*homepage.create({}, function(err, created){
     if(err){console.log(err);
@@ -74,7 +75,29 @@ router.get("/", function(req, res){
 });
 
 router.get('/aktualnosci', (req, res) => {
-    res.render('aktualnosci/aktualnosci')
+    News.find({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.render('aktualnosci/aktualnosci', {news: found});        
+        }
+    })
+});
+
+router.get('/aktualnosci/:id', (req,res)=>{
+    News.findById( req.params.id, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            News.find({}, (err, titles)=>{
+                if(err){
+                    console.log(err);
+                }else{
+                    res.render('aktualnosci/aktualnosci-show', {news: found, showTits: titles});        
+                }
+            });
+        }
+    });
 });
 
 // ================

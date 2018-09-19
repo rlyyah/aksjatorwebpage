@@ -11,7 +11,8 @@ const User = require("../models/user"),
       Kolo = require("../models/kolo"),
       Global = require("../models/global"),
       Members = require("../models/members_two"),
-      Achievement = require("../models/achievements")
+      Achievement = require("../models/achievements"),
+      News = require("../models/news");
 
 
 
@@ -435,7 +436,42 @@ router.put('/dolacz', (req, res)=>{
     })
 })
 
+// ~~~~~~~~~~~~~
+// |Aktualności|
+// ~~~~~~~~~~~~~
 
+
+router.get('/aktualnosci', (req, res)=>{
+    News.find({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.render('admin/aktualnosci/aktualnosciedit',{news: found});
+        }
+    });
+});
+
+router.post('/aktualnosci', (req, res)=>{
+
+   News.create(req.body.news, (err, created)=>{
+       if(err){
+           console.log(err);
+       }else{
+           res.redirect('/edit/aktualnosci');
+       }
+   }); 
+});
+
+router.delete('/aktualnosci/:id',(req,res)=>{
+    var id = 'lol';
+    News.findByIdAndRemove(req.params.id,(err, deleted)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.redirect('/edit/aktualnosci');
+        }
+    })
+})
 
 
 module.exports = router;

@@ -2,6 +2,7 @@ var mongoose = require("mongoose");
 var Achievement = require("./models/achievements");
 var Member = require("./models/members_two");
 var Kolo = require("./models/kolo");
+const News = require("./models/news");
 var faker = require("faker");
 faker.locale = "pl";
 
@@ -29,6 +30,27 @@ function seedMembers(){
         
     }
     
+    
+function seedNews(){
+    var news = {
+                title: 'im a a title hello!',
+                imgUrl: 'https://images.pexels.com/photos/52608/pexels-photo-52608.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                text: 'proper way to introduce myself!',
+                date: '11.11.2011'
+            }
+    
+    News.create(news, (err, created)=>{
+        if(err){
+            console.log(err);
+        }else{
+            
+            console.log(news, 'successfuly added! :)')
+            
+            
+        }
+    });
+    
+}    
 
 
 
@@ -59,7 +81,7 @@ function seedAchievements(){
 }
 
 function seedDB(){
-    seedMembers();
+    seedNews();
     //seedAchievements();
 }
 

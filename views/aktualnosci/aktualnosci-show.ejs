@@ -1,0 +1,45 @@
+<% include ../partials/bootstrap %>
+
+<div class="container">
+    <div class='row'>
+        <div class='col-md-3'>
+            <h2>pozostałe akutalności:</h2>
+            <ul>
+                <%showTits.slice().reverse().forEach((title, index)=>{%>
+                    <%if(index>10){%>
+                        
+                    <% }else{%> 
+                        <li>
+                            <a href='/aktualnosci/<%=title.id%>'>
+                                <%=title.title%>
+                            </a>
+                        </li>
+                    <% }%>    
+                <% });%>    
+            </ul>
+        </div>
+        <div class='col-md-9'>
+            <div class="border pb-3 mt-5 mb-5">
+                <div class="post-img">
+                    <img width="100%" src="<%=news.imgUrl%>">
+                </div>
+                <div class="post-content mt-3">
+                    <div class="row title">
+                        <h2><%= news.title%></h2>
+                    </div>
+                    <div class="row desc">
+                        <p><%- news.text%></p>
+                    </div>
+                    <div class="row extra">
+                        <span><%= news.date%></span>
+                    </div>
+                    <div class="row">
+                        <a class="btn btn-md btn-info mt-3" href="/aktualnosci">Powrót</a>
+                    </div>
+                    
+                </div>
+            </div>    
+        </div>
+    </div>
+</div>
+
