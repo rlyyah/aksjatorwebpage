@@ -22,6 +22,14 @@ function nameFirst(names){
         return first + ' ' + full.join(' ');
     })
 }
+
+var Gallery = require('express-photo-gallery');
+
+var options = {
+  title: 'My Awesome Photo Gallery'
+};      
+
+router.use('/photos', Gallery('public/img', options));
     
 /*var arrOfMemb = [];
 Members.findOne({}, function(err, foundMembers) {

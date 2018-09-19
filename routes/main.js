@@ -7,6 +7,9 @@ const imgUrl = require("../imgrandomizer"),
       global = require("../models/global"),
       User = require("../models/user"),
       News = require("../models/news");
+      
+ 
+
 
 /*homepage.create({}, function(err, created){
     if(err){console.log(err);
@@ -46,6 +49,14 @@ const imgUrl = require("../imgrandomizer"),
     }
 });*/
 
+var Gallery = require('express-photo-gallery');
+
+var options = {
+  title: 'My Awesome Photo Gallery'
+};      
+
+router.use('/photos', Gallery('public/img', options));
+
 
 //====================
 //======ROUTES========
@@ -84,6 +95,8 @@ router.get('/aktualnosci', (req, res) => {
     })
 });
 
+
+
 router.get('/aktualnosci/:id', (req,res)=>{
     News.findById( req.params.id, (err, found)=>{
         if(err){
@@ -99,6 +112,17 @@ router.get('/aktualnosci/:id', (req,res)=>{
         }
     });
 });
+
+router.get('/dzialnosc', (req, res)=>{
+    
+    News.findOne({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.render('dzialalnosc/projektynaukoweshow', {news: found});        
+        }
+    })
+})
 
 // ================
 // Auth
@@ -121,6 +145,8 @@ router.post("/register", function(req, res) {
       
    });
 });
+
+
 
 router.get("/login", function(req, res) {
    res.render("login"); 
