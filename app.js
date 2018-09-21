@@ -46,6 +46,8 @@ mongoose.connect("mongodb://aksjator:aksjatorp4ssword@ds131800.mlab.com:31800/ak
 /*mongoose.connect("mongodb://localhost/wgig_page");
 */
 
+
+
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride("_method"))
@@ -60,6 +62,7 @@ app.use(mainRoutes);
 app.use("/kolo", koloRoutes);
 app.use('/dzialalnosc', dzialalnoscRoutes);
 app.use('/edit', adminRoutes);
+
 
 app.get('*', function(req, res) {
     res.render('main/notfound')

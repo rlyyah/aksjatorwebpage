@@ -1,0 +1,54 @@
+<% include ../partials/bootstrap %>
+<link rel='stylesheet' href='/stylesheets/dzialalnosc.css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.0/baguetteBox.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.0/baguetteBox.js" async></script> 
+
+        
+        
+    </head>
+            
+    <body>
+        <h2 class='text-center'><%=pnaukowy.title%></h2>
+    <div class='container'>
+        <div class='photo-gallery border'>
+            <% for(var i=0;i<pnaukowy.images.length;i++){%>
+                <% if(i%3==0){%>
+                    <div class='row'>
+                        <div class='col-md-4'>
+                            <a href='<%=pnaukowy.images[i]%>'>
+                                <img width='250px' class='mt-4 ml-5 img-thumbnail' src='<%=pnaukowy.images[i]%>'>
+                            </a>
+                        </div>
+                <% }else if(i%3==2){%>
+                        <div class='col-md-4'>
+                            <a href='<%=pnaukowy.images[i]%>'>
+                                <img width='250px' class='mt-4 ml-5 img-thumbnail' src='<%=pnaukowy.images[i]%>'>
+                            </a>
+                        </div>
+                    </div>
+                <% }else{%>
+                    <div class='col-md-4'>
+                        <a href='<%=pnaukowy.images[i]%>'>
+                            <img width='250px' class='mt-4 ml-5 img-thumbnail' src='<%=pnaukowy.images[i]%>'>
+                        </a>
+                    </div>
+                <% }%>
+            <% }%>
+        </div>
+    </div>
+    <a class='btn btn-lg btn-info' href='/dzialalnosc/konferencje'>powrót</a>
+    
+
+    <script>
+        window.onload = function(){
+  
+  
+  
+  baguetteBox.run('.photo-gallery', {animation: 'fadeIn'});
+    
+};
+
+    </script>
+    
+    </body>
+</html>
