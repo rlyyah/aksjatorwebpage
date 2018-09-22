@@ -5,12 +5,12 @@
 <div class="container">
         <div class="row ">
             <div class="col-12 text-center">
-                <h2>DODAJ Aktualnosc</h2>
+                <h2>DODAJ Sesje naukową</h2>
             </div>
         </div>
         <div class="row">
             <div class="form-styler mt-3">
-                <form action="/edit/aktualnosci" method="POST">
+                <form action="/edit/sesjenaukowe" method="POST">
                     <div class="form-group">
                         <input class="form-control" type="text" name="news[title]" placeholder="Tytuł">
                     </div>
@@ -32,7 +32,7 @@
         </div>
         <div class='row'>
             <%news.slice().reverse().forEach((news)=>{%>
-            <form action='/edit/aktualnosci/<%=news._id%>?_method=DELETE' method='POST'>
+            <form action='/edit/sesjenaukowe/<%=news._id%>?_method=DELETE' method='POST'>
                 <p><%=news.title%></p>
                 <button>usuń</button>
             </form>

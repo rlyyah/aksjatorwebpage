@@ -12,7 +12,12 @@ const User = require("../models/user"),
       Global = require("../models/global"),
       Members = require("../models/members_two"),
       Achievement = require("../models/achievements"),
-      News = require("../models/news");
+      News = require("../models/news"),
+      Pnaukowe = require("../models/pnaukowe"),
+      Konferencje = require("../models/konferencje"),
+      Publikacje = require("../models/dzialalnosc"),
+      Snaukowe = require("../models/sesjenaukowe");
+      
 
 
 
@@ -462,16 +467,177 @@ router.post('/aktualnosci', (req, res)=>{
    }); 
 });
 
-router.delete('/aktualnosci/:id',(req,res)=>{
-    var id = 'lol';
+router.delete('/aktualnosci/:id', (req, res)=>{
+    
     News.findByIdAndRemove(req.params.id,(err, deleted)=>{
         if(err){
             console.log(err);
         }else{
             res.redirect('/edit/aktualnosci');
         }
-    })
-})
+    });
+});
+
+// ~~~~~~~~~~~~~
+// |Działalność|
+// ~~~~~~~~~~~~~
+
+// Projekty naukowe
+
+router.get('/projektynaukowe', (req, res)=>{
+    Pnaukowe.find({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.render('admin/dzialalnosc/projektynaukowe', {pnaukowe: found});
+        }
+    });
+});
+
+router.post('/projektynaukowe', (req, res)=>{
+    var projekt = req.body.pnaukowe;
+    Pnaukowe.create(projekt, (err, created)=>{
+        if(err){
+            console.log(err);
+        }else{
+            console.log('projekt succesfully added:', created);
+            res.redirect('/edit/projektynaukowe');
+        }
+    });
+});
+
+router.post('/projektynaukowe/zdjecia/:id', (req, res)=>{
+    var image = req.body.image;
+    Pnaukowe.findById(req.params.id, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            found.images.push(image);
+            found.save();
+            res.redirect('/edit/projektynaukowe');
+        }
+    });
+});
+
+router.delete('/projektynaukowe/:id', (req, res)=>{
+    Pnaukowe.findOneAndRemove(req.params.id, (err, deleted)=>{
+        if(err){
+            console.log(err);
+        }else{
+            console.log('pnaukowy was succesfully deleted', deleted);
+            res.redirect('/edit/projektynaukowe');
+        }
+    }); 
+});
+
+// Konferencje
+
+router.get('/konferencje', (req, res)=>{
+    Konferencje.find({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.render('admin/dzialalnosc/konferencje', {pnaukowe: found});
+        }
+    });
+});
+
+router.post('/konferencje', (req, res)=>{
+    var projekt = req.body.pnaukowe;
+    Konferencje.create(projekt, (err, created)=>{
+        if(err){
+            console.log(err);
+        }else{
+            console.log('projekt succesfully added:', created);
+            res.redirect('/edit/konferencje');
+        }
+    });
+});
+
+router.post('/konferencje/zdjecia/:id', (req, res)=>{
+    var image = req.body.image;
+    Konferencje.findById(req.params.id, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            found.images.push(image);
+            found.save();
+            res.redirect('/edit/konferencje');
+        }
+    });
+});
+
+router.delete('/konferencje/:id', (req, res)=>{
+    Konferencje.findOneAndRemove(req.params.id, (err, deleted)=>{
+        if(err){
+            console.log(err);
+        }else{
+            console.log('pnaukowy was succesfully deleted', deleted);
+            res.redirect('/edit/konferencje');
+        }
+    }); 
+});
+
+// Publikacje
+
+router.get('/publikacje', (req, res)=>{
+    Publikacje.findOne({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.render('admin/dzialalnosc/publikacje', {publikacje: found});
+        }
+    });
+});
+
+router.put('/publikacje', (req, res)=>{
+    var publi = req.body.publikacje;
+    Publikacje.findOne({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            found.publikacje = publi;
+            found.save();
+            res.redirect('/edit/publikacje');
+        }
+    });
+});
+
+// Sesje naukowe
+
+router.get('/sesjenaukowe', (req, res)=>{
+    Snaukowe.find({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.render('admin/dzialalnosc/sesjenaukowe',{news: found});
+        }
+    });
+});
+
+router.post('/sesjenaukowe', (req, res)=>{
+    var sesja = req.body.news;
+   Snaukowe.create(sesja, (err, created)=>{
+       if(err){
+           console.log(err);
+       }else{
+           res.redirect('/edit/sesjenaukowe');
+       }
+   }); 
+});
+
+router.delete('/sesjenaukowe/:id', (req, res)=>{
+    
+    Snaukowe.findByIdAndRemove(req.params.id,(err, deleted)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.redirect('/edit/sesjenaukowe');
+        }
+    });
+});
+
+
 
 
 module.exports = router;
