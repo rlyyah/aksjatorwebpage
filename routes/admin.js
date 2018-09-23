@@ -16,7 +16,11 @@ const User = require("../models/user"),
       Pnaukowe = require("../models/pnaukowe"),
       Konferencje = require("../models/konferencje"),
       Publikacje = require("../models/dzialalnosc"),
-      Snaukowe = require("../models/sesjenaukowe");
+      Snaukowe = require("../models/sesjenaukowe"),
+      Npartnerzy = require("../models/nasipartnerzy"),
+      Wspolpraca = require("../models/wspolpraca");
+      
+      
       
 
 
@@ -636,6 +640,87 @@ router.delete('/sesjenaukowe/:id', (req, res)=>{
         }
     });
 });
+
+// ~~~~~~~~~~~~~
+// |Współpraca|
+// ~~~~~~~~~~~~~
+
+
+// Nasi partnerzy
+
+router.get('/nasipartnerzy', (req, res)=>{
+   Npartnerzy.find({}, (err, found)=>{
+       if(err){
+           console.log(err);
+       }else{
+           res.render('admin/wspolpraca/nasipartnerzy', {partnerzy: found});
+       }
+   }); 
+});
+
+router.post('/nasipartnerzy', (req,res)=>{
+    var partner = req.body.partner;
+    Npartnerzy.create(partner, (err, created)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.redirect('/edit/nasipartnerzy');
+        }
+    });
+});
+
+// Oferta współpracy
+
+router.get('/ofertawspolpracy', (req, res)=>{
+    Wspolpraca.findOne({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.render('admin/wspolpraca/ofertawspolpracy', {publikacje: found});
+        }
+    });
+});
+
+router.put('/ofertawspolpracy', (req, res)=>{
+    var publi = req.body.publikacje;
+    Wspolpraca.findOne({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            found.oferta = publi;
+            found.save();
+            res.redirect('/edit/ofertawspolpracy');
+        }
+    });
+});
+
+// Wspomóz nas
+
+router.get('/wspomoznas', (req, res)=>{
+    Wspolpraca.findOne({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.render('admin/wspolpraca/wspomoznas', {publikacje: found});
+        }
+    });
+});
+
+router.put('/wspomoznas', (req, res)=>{
+    var publi = req.body.publikacje;
+    Wspolpraca.findOne({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            found.wspomoz = publi;
+            found.save();
+            res.redirect('/edit/wspomoznas');
+        }
+    });
+});
+
+
+
 
 
 

@@ -1,0 +1,33 @@
+<% include ../../partials/bootstrap %>
+
+
+
+<div class="container">
+        <div class="row ">
+            <div class="col-12 text-center">
+                <h2>Edytuj Ofertę Wspołpracy</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-styler mt-3">
+                <form action="/edit/ofertawspolpracy?_method=PUT" method="POST">
+                    <div class="form-group">
+                        <textarea name="publikacje" rows="25" class="form-control">
+                            <%if(publikacje.oferta){ %>
+                                <%=publikacje.oferta%>
+                            <% }else{%>
+                            <%  } %>
+                        </textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block">Zatwierdź</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+        <div class="row">
+            <a href="/edit">Powrót</a>
+        </div>
+    
+</div>

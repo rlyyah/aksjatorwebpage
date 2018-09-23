@@ -11,6 +11,7 @@ localStategy   = require("passport-local"),
 var mainRoutes = require("./routes/main"),
     koloRoutes = require("./routes/kolo"),
     dzialalnoscRoutes = require("./routes/dzialalnosc"),
+    wspolpracaRoutes = require("./routes/wspolpraca"),
     adminRoutes = require("./routes/admin");
    
 
@@ -61,6 +62,7 @@ app.set("view engine", "ejs");
 app.use(mainRoutes);
 app.use("/kolo", koloRoutes);
 app.use('/dzialalnosc', dzialalnoscRoutes);
+app.use('/wspolpraca', wspolpracaRoutes);
 app.use('/edit', adminRoutes);
 
 

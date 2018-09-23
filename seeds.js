@@ -7,11 +7,27 @@ const Pnaukowe = require("./models/pnaukowe");
 const Konferencje = require("./models/konferencje");
 const Dzialalnosc = require("./models/dzialalnosc");
 const Snaukowe = require("./models/sesjenaukowe");
+const Npartnerzy = require("./models/nasipartnerzy");
+const Wspolpraca = require("./models/wspolpraca");
+
 
 
 var faker = require("faker");
 faker.locale = "pl";
 
+function seedWspolpraca(){
+    Wspolpraca.create({oferta: 'hello there!',
+        wspomoz:'here also:3'
+    });
+}
+
+function seedPartnerzy(){
+    Npartnerzy.create({
+        name: 'Sknerus McKwacz',
+        desc: 'Sknerus McKwacz urodził się w 1867 w Glasgow w Szkocji, w zubożałej, choć niegdyś potężnej rodzinie McKwaczów. Mieszkał tam wraz z ojcem Fergusem, matką Kaczencją, stryjem Nerwusem i młodszymi siostrami – Matyldą i Hortensją.',
+        imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Spirit_43_-_Scrooge_-_Oncle_Picsou_-_Garrepa.JPG/240px-Spirit_43_-_Scrooge_-_Oncle_Picsou_-_Garrepa.JPG'
+    });
+}
 
 function seedPnaukowe(){
     Konferencje.create({
@@ -111,6 +127,8 @@ function seedAchievements(){
 }
 
 function seedDB(){
+    seedWspolpraca();
+    //seedPartnerzy();
     //seedNews();
     //seedAchievements();
     //seedPnaukowe();

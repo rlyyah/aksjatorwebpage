@@ -1,0 +1,38 @@
+<% include ../../partials/bootstrap %>
+
+
+
+<div class="container">
+        <div class="row ">
+            <div class="col-12 text-center">
+                <h2>DODAJ Partnerów</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-styler mt-3">
+                <form action="/edit/nasipartnerzy" method="POST">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="partner[name]" placeholder="Tytuł">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="partner[imgUrl]" placeholder="URL obrazka" disabled>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="partner[desc]" rows="25" class="form-control">Tekst</textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block">Zatwierdź</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+        <div class='row'>
+            
+        </div>
+        
+        <div class="row">
+            <a href="/edit">Powrót</a>
+        </div>
+    
+</div>

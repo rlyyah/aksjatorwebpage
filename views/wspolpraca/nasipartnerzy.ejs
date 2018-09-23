@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+<% include ../partials/dzialalnosc/photolist %>
+
+<% partnerzy.forEach((partner)=>{%>
+    <h2><%=partner.name%></h2>
+    <div class="separator-container">
+        <div class="separator line-separator">∎</div>
+    </div>
+    <div class="container">
+    	<div class="row">
+    		<p class="about mt-3"><%=partner.desc%></p>
+    	</div>
+    </div>
+<% })%>
+
+
+
+<% include ../partials/footer %>
