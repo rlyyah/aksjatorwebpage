@@ -11,13 +11,13 @@
             <h2>Przewo</h2>
             <form action='/edit/zarzadedit' method='POST'>
                 <div class="form-group">
-                        <input type="text" name="przewo[name]" placeholder="Imię i nazwisko here">
+                        <input type="text" name="przewo[name]" placeholder="Imię i nazwisko here" value="<%=homepage.przewo.name%>">
                 </div>
                 <div class="form-group">
-                        <input type="text" name="przewo[img]" placeholder="zdj here">
+                        <input type="text" name="przewo[img]" placeholder="zdj here" value="<%=homepage.przewo.img%>">
                 </div>
                 <div class="form-group">
-                        <textarea name="przewo[desc]" rows="10" class="form-control" maxlength='150'>Opis here</textarea>
+                        <textarea name="przewo[desc]" rows="10" class="form-control" maxlength='150'><%=homepage.przewo.desc%></textarea>
                 </div>
                 <div class="form-group">
                         <button class='btn btn-lg btn-primary'>Zatwierdz!</button>
@@ -28,13 +28,13 @@
             <h2>Vice</h2>
             <form action='/edit/zarzadedit' method='POST'>
                 <div class="form-group">
-                        <input type="text" name="vice[name]" placeholder="Imię i nazwisko here">
+                        <input type="text" name="vice[name]" placeholder="Imię i nazwisko here" value="<%=homepage.vice.name%>">
                 </div>
                 <div class="form-group">
-                        <input type="text" name="vice[img]" placeholder="zdj here">
+                        <input type="text" name="vice[img]" placeholder="zdj here" value="<%=homepage.vice.img%>">
                 </div>
                 <div class="form-group">
-                        <textarea name="vice[desc]" rows="10" class="form-control" maxlength='150'>Opis here</textarea>
+                        <textarea name="vice[desc]" rows="10" class="form-control" maxlength='150'><%=homepage.vice.desc%></textarea>
                 </div>
                 <div class="form-group">
                         <button class='btn btn-lg btn-primary'>Zatwierdz!</button>
@@ -45,13 +45,13 @@
             <h2>Skarbnik</h2>
             <form action='/edit/zarzadedit' method='POST'>
                 <div class="form-group">
-                        <input type="text" name="skarbnik[name]" placeholder="Imię i nazwisko here">
+                        <input type="text" name="skarbnik[name]" placeholder="Imię i nazwisko here" value="<%=homepage.skarbik.name%>">
                 </div>
                 <div class="form-group">
-                        <input type="text" name="skarbnik[img]" placeholder="zdj here">
+                        <input type="text" name="skarbnik[img]" placeholder="zdj here" value="<%=homepage.skarbik.img%>">
                 </div>
                 <div class="form-group">
-                        <textarea name="skarbnik[desc]" rows="10" class="form-control" maxlength='150'>Opis here</textarea>
+                        <textarea name="skarbnik[desc]" rows="10" class="form-control" maxlength='150'><%=homepage.skarbik.desc%></textarea>
                 </div>
                 <div class="form-group">
                         <button class='btn btn-lg btn-primary'>Zatwierdz!</button>
@@ -62,13 +62,13 @@
             <h2>Sekretarz</h2>
             <form action='/edit/zarzadedit' method='POST'>
                 <div class="form-group">
-                        <input type="text" name="sekretarz[name]" placeholder="Imię i nazwisko here">
+                        <input type="text" name="sekretarz[name]" placeholder="Imię i nazwisko here" value="<%=homepage.sekretarz.name%>">
                 </div>
                 <div class="form-group">
-                        <input type="text" name="sekretarz[img]" placeholder="zdj here">
+                        <input type="text" name="sekretarz[img]" placeholder="zdj here" value="<%=homepage.sekretarz.img%>">
                 </div>
                 <div class="form-group">
-                        <textarea name="sekretarz[desc]" rows="10" class="form-control" maxlength='150'>Opis here</textarea>
+                        <textarea name="sekretarz[desc]" rows="10" class="form-control" maxlength='150'><%=homepage.sekretarz.desc%></textarea>
                 </div>
                 <div class="form-group">
                         <button class='btn btn-lg btn-primary'>Zatwierdz!</button>
@@ -79,4 +79,5 @@
     <div class='row'>
         <a href='/edit'>powrót</a>
     </div>
+    
 </div>

@@ -1,0 +1,52 @@
+<% include ../../partials/bootstrap %>
+
+<div class="container">
+    <div class="row">
+        <div class='col-md-12'>
+            <h1 class='text-center'>Edycja opiekunów</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Przewo</h2>
+            <form action='/edit/opiekunowie' method='POST'>
+                <div class="form-group">
+                        <input type="text" name="uno[name]" placeholder="Imię i nazwisko here">
+                </div>
+                <div class="form-group">
+                        <input type="text" name="uno[img]" placeholder="zdj here">
+                </div>
+                <div class="form-group">
+                        <input type="text" name="uno[link]" placeholder="zdj here">
+                </div>
+                <div class="form-group">
+                        <textarea name="uno[desc]" rows="10" class="form-control" maxlength='150'></textarea>
+                </div>
+                <div class="form-group">
+                        <button class='btn btn-lg btn-primary'>Zatwierdz!</button>
+                </div>                
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h2>Vice</h2>
+            <form action='/edit/opiekunowie' method='POST'>
+                <div class="form-group">
+                        <input type="text" name="duo[name]" placeholder="Imię i nazwisko here" >
+                </div>
+                <div class="form-group">
+                        <input type="text" name="duo[img]" placeholder="zdj here" >
+                </div>
+                <div class="form-group">
+                        <textarea name="duo[desc]" rows="10" class="form-control" maxlength='150'></textarea>
+                </div>
+                <div class="form-group">
+                        <button class='btn btn-lg btn-primary'>Zatwierdz!</button>
+                </div>     
+            </form>
+        </div>
+      
+    </div>
+    <div class='row'>
+        <a href='/edit'>powrót</a>
+    </div>
+</div>

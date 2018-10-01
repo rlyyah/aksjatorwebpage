@@ -30,14 +30,17 @@
             </div>
             
         </div>
-        <div class='row'>
+        
             <%news.slice().reverse().forEach((news)=>{%>
+            <div class='row'>
             <form action='/edit/aktualnosci/<%=news._id%>?_method=DELETE' method='POST'>
                 <p><%=news.title%></p>
                 <button>usuń</button>
             </form>
+            <a href='/edit/aktualnosci/edit/<%=news._id%>' class='btn btn-info'>Edit</a>
+            </div>
             <% });%>
-        </div>
+        
         
         
         

@@ -26,6 +26,18 @@ var homepageSchema = new mongoose.Schema({
         img: String,
         desc: String
     },
+    opiekun1:{
+        name: String,
+        img: String,
+        desc: String,
+        link: String
+    },
+    opiekun2:{
+        name: String,
+        img: String,
+        desc: String,
+        link: String
+    },
     okole:{
         text: {type:String, default: "test"}
     },

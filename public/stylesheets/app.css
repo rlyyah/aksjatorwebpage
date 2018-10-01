@@ -185,7 +185,9 @@ box-shadow: 1.5px 4.5px 7px 0px rgba(0,0,0,0.75);
    	    list-style-type: none;
    	}
 
-
+.navbar-expand-lg{
+    padding: 0;
+}
 
 
 /* NAVBAR NAVBAR NAVBAR NAVBAR */
@@ -562,15 +564,22 @@ box-shadow: 3px 9px 14px 0px rgba(0,0,0,0.75);
    	
    	   .fbup{
    	color: white;  
-   	font-size: 105%; }
+   	font-size: 105%;
+   	text-align: center;
+   	margin-top: 40%;
+   	       
+   	   }
    	.linup{
-	color: white;  
-
+	color: white; 
+	text-align: center;
+margin-top: 40%;
    	font-size: 90%;
    	}
    	.ytup{
    		color:red;
    		font-size: 97.5%;
+   		text-align: center;
+   		margin-top: 40%;
  
    	}
    	.round-meup{

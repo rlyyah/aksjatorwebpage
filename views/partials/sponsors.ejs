@@ -6,7 +6,11 @@
 	  <section class="slider">
 		    <div class="customer-logos">
 		    	<% global.partners.forEach((p)=>{ %>
-		    		<div class='slide'><img src='<%= p.imgUrl%>' style='max-height:125px'></div>
+		    		<div class='slide'>
+			    			<a href='<%=p.linkUrl%>'>
+			    				<img src='<%= p.imgUrl%>' style='max-height:125px'>
+			    			</a>
+		    		</div>
 		    	<% })%>
 			  <!--<div class="slide"><img src="https://www.solodev.com/assets/carousel/image1.png"></div>
 			  <div class="slide"><img src="https://www.solodev.com/assets/carousel/image2.png"></div>

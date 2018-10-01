@@ -102,7 +102,14 @@ router.delete('/homepageedit/:index', (req, res)=>{
 // Zarząd
 
 router.get('/zarzadedit', function(req, res) {
-    res.render('admin/homepage/zarzadedit');
+    Homepage.findOne({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.render('admin/homepage/zarzadedit', {homepage:found});
+        }
+    })
+    
 });
 
 router.post('/zarzadedit', function(req, res) {
@@ -112,7 +119,6 @@ router.post('/zarzadedit', function(req, res) {
         }else{
             if(req.body.przewo){
                 console.log('retrieved data from przewo=', req.body.przewo)
-                
                 found.przewo = req.body.przewo;
                 found.save();
                 console.log('saved data=', found.przewo)
@@ -127,8 +133,6 @@ router.post('/zarzadedit', function(req, res) {
                 console.log('retrieved data from skarbik=', req.body.skarbnik)
                 found.skarbik = req.body.skarbnik;
                 found.save();
-                
-                
                 res.redirect('/edit/zarzadedit');
             }else if(req.body.sekretarz){
                 found.sekretarz = req.body.sekretarz;
@@ -136,11 +140,39 @@ router.post('/zarzadedit', function(req, res) {
                 console.log('retrieved data from sekretarz=', req.body.sekretarz)
                 console.log('saved data=', req.body.sekretarz)
                 res.redirect('/edit/zarzadedit');
-                
             }else{
                 res.redirect('/edit/zarzadedit');
                 alert('sth went wrong!');
             }
+        }
+    })
+})
+
+// Opiekunowie
+
+router.get('/opiekunowie', (req, res)=>{
+    Homepage.findOne({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.render('admin/homepage/opiekunowie', {opiekunowie: found});
+        }
+    });
+});
+
+router.post('/opiekunowie', (req, res)=>{
+    Homepage.findOne({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            if(req.body.uno){
+                found.opiekun1 = req.body.uno;
+                found.save();
+            }else{
+                found.opiekun2 = req.body.duo;
+                found.save();
+            }
+            res.redirect('/edit/opiekunowie');
         }
     })
 })
@@ -449,7 +481,6 @@ router.put('/dolacz', (req, res)=>{
 // |Aktualności|
 // ~~~~~~~~~~~~~
 
-
 router.get('/aktualnosci', (req, res)=>{
     News.find({}, (err, found)=>{
         if(err){
@@ -481,6 +512,28 @@ router.delete('/aktualnosci/:id', (req, res)=>{
         }
     });
 });
+
+router.get('/aktualnosci/edit/:id', (req, res)=>{
+    News.findById(req.params.id, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.render('admin/aktualnosci/aktualnosciput', {news:found})
+        }
+    });
+});
+
+router.put('/aktualnosci/:id', (req, res)=>{
+    News.findByIdAndUpdate(req.params.id, req.body.news, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.redirect('/edit/aktualnosci/edit/' + req.params.id)
+        }
+    });
+});
+
+
 
 // ~~~~~~~~~~~~~
 // |Działalność|
@@ -718,10 +771,6 @@ router.put('/wspomoznas', (req, res)=>{
         }
     });
 });
-
-
-
-
 
 
 
