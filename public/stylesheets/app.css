@@ -34,10 +34,10 @@ div.dropdown-menu.show{
     display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
     z-index: 99; /* Make sure it does not overlap */
-    bottom: 5%;
-    right: 3%;
+    bottom: 8%;
+    right: 12%;
     color: #DAA520;
-    font-size: 5.5em;
+    font-size: 3.5em;
 }
 #arrow-up:hover{
     color:#b4a36d;
@@ -186,7 +186,7 @@ box-shadow: 1.5px 4.5px 7px 0px rgba(0,0,0,0.75);
    	}
 
 .navbar-expand-lg{
-    padding: 0;
+    
 }
 
 
@@ -240,11 +240,16 @@ box-shadow: 1.5px 4.5px 7px 0px rgba(0,0,0,0.75);
  
 }
 .main-logo{
-    width:100%;
-    min-height: 300px;
-    min-width: 1000px;
-    object-fit: cover;
+  width: auto ;
+  max-width: 100% ;
+  height: auto ;
 }
+
+/*img {
+  width: auto ;
+  max-width: 100% ;
+  height: auto ;
+}*/
 
 .media-buttons{
     position:absolute;
@@ -484,22 +489,30 @@ h4{
     position: relative;
 }
 
-.caption {
+
+
+ .caption {
     position: absolute;
     top: 20%;
     left: 10%;
-    width: 100%;
+    width: 90%;
     color: white;
     text-shadow: 2px 2px black;	
     font-family: 'Mina', sans-serif;
 }
 
 .caption > h1 {
-	font-size: 5em;
+	font-size: 4em;
 }
 .caption > p {
-	font-size: 2em;
+    margin: 15px 0;
+	font-size: 1em;
+	color:black;
+	text-shadow: none;
 }
+
+
+
 
 
 
@@ -787,7 +800,7 @@ table.center{
    		color: black;
 }
 .newsletter{
-    margin-bottom: 30%;
+    margin-bottom: 5%;
 }
 .newsletter form button{
     color: #777;
@@ -823,18 +836,12 @@ table.center{
 
 
 @media (min-width: 576px) { 
-
-.main-logo{
-    width:100%;
-    min-height: 300px;
-    min-width: 576px;
-    object-fit: cover;
-}
+   
 
 }
-
-
 @media (min-width: 768px) { 
+
+
 
 .newsletter h5{
  
@@ -876,6 +883,28 @@ table.center{
     object-fit: cover;
 }
 
+.caption {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 100%;
+    color: white;
+    text-shadow: 2px 2px black;	
+    font-family: 'Mina', sans-serif;
+}
+
+.caption > h1 {
+	font-size: 5em;
+}
+.caption > p {
+	font-size: 2em;
+	color: white;
+	text-shadow: 2px 2px black;	
+}
+
+
+
+
 
     
 }
@@ -895,11 +924,29 @@ table.center{
     min-width: 992px;
     object-fit: cover;
 }
+.nowrap{
+    white-space: nowrap;
+}
     
 }
 
 
 @media (min-width: 1200px) { 
+    
+#arrow-up{
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    z-index: 99; /* Make sure it does not overlap */
+    bottom: 5%;
+    right: 3%;
+    color: #DAA520;
+    font-size: 5.5em;
+}
+#arrow-up:hover{
+    color:#b4a36d;
+    cursor: pointer;
+}    
+    
     
     
 }
