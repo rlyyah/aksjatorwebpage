@@ -271,7 +271,7 @@ background: rgba(0, 0, 0, 0.5);
 .homepage-news-button{
       position: absolute;
       top: 82%;
-      left: 25%;
+      left: 40%;
       transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
       border: 1px solid black;
@@ -946,7 +946,16 @@ table.center{
     color:#b4a36d;
     cursor: pointer;
 }    
-    
+
+.homepage-news-button{
+      position: absolute;
+      top: 82%;
+      left: 25%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      border: 1px solid black;
+      
+}    
     
     
 }
