@@ -945,7 +945,12 @@ table.center{
 #arrow-up:hover{
     color:#b4a36d;
     cursor: pointer;
-}    
+}   
+
+.page-footer{
+    
+    padding-top: 40px;
+}
 
 .homepage-news-button{
       position: absolute;
