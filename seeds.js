@@ -9,11 +9,48 @@ const Dzialalnosc = require("./models/dzialalnosc");
 const Snaukowe = require("./models/sesjenaukowe");
 const Npartnerzy = require("./models/nasipartnerzy");
 const Wspolpraca = require("./models/wspolpraca");
+const WyjazdyNaukowe = require('./models/wyjazdynaukowe');
+const Seminaria = require('./models/seminaria');
 
 
 
 var faker = require("faker");
 faker.locale = "pl";
+
+
+
+function seedSeminaria(){
+    Seminaria.create({
+        title: 'title',
+        desc: 'desc',
+        text: 'text',
+        date: 'date',
+        imgUrl: 'https://images.pexels.com/photos/219014/pexels-photo-219014.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        images: ['https://images.pexels.com/photos/1261408/pexels-photo-1261408.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', 'https://images.pexels.com/photos/709188/pexels-photo-709188.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260']
+    }, (err, created)=>{
+        if(err){
+            console.log(err);
+        }else{
+            console.log('seminarium created!');
+        }
+    });
+}
+function seedWyjazdyNauk(){
+    WyjazdyNaukowe.create({
+        title: 'title',
+        desc: 'desc',
+        text: 'text',
+        date: 'date',
+        imgUrl: 'https://images.pexels.com/photos/219014/pexels-photo-219014.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        images: ['https://images.pexels.com/photos/1261408/pexels-photo-1261408.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', 'https://images.pexels.com/photos/709188/pexels-photo-709188.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260']
+    },(err, created)=>{
+        if(err){
+            console.log(err);
+        }else{
+            console.log('seminarium created!');
+        }
+    });
+}
 
 function seedWspolpraca(){
     Wspolpraca.create({oferta: 'hello there!',
@@ -127,7 +164,9 @@ function seedAchievements(){
 }
 
 function seedDB(){
-    seedWspolpraca();
+    seedSeminaria();
+    seedWyjazdyNauk();
+    //seedWspolpraca();
     //seedPartnerzy();
     //seedNews();
     //seedAchievements();

@@ -51,7 +51,7 @@ mongoose.connect("mongodb://aksjator:aksjatorp4ssword@ds131800.mlab.com:31800/ak
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(methodOverride("_method"))
+app.use(methodOverride("_method"));
 app.set("view engine", "ejs");
 
 
@@ -67,8 +67,8 @@ app.use('/edit', adminRoutes);
 
 
 app.get('*', function(req, res) {
-    res.render('main/notfound')
-})
+    res.render('main/notfound');
+});
 
 
 
@@ -82,8 +82,8 @@ app.get('*', function(req, res) {
 
 
 app.listen(process.env.PORT, process.env.IP, function(){
-   console.log("3...") 
-   console.log("2...") 
-   console.log("1...") 
-   console.log("Server has started!") 
+   console.log("3..."); 
+   console.log("2..."); 
+   console.log("1..."); 
+   console.log("Server has started!"); 
 });

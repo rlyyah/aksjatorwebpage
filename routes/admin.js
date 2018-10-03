@@ -18,7 +18,9 @@ const User = require("../models/user"),
       Publikacje = require("../models/dzialalnosc"),
       Snaukowe = require("../models/sesjenaukowe"),
       Npartnerzy = require("../models/nasipartnerzy"),
-      Wspolpraca = require("../models/wspolpraca");
+      Wspolpraca = require("../models/wspolpraca"),
+      Seminaria = require("../models/seminaria"),
+      WyjazdyNaukowe = require("../models/wyjazdynaukowe");
       
       
       
@@ -772,6 +774,142 @@ router.put('/wspomoznas', (req, res)=>{
     });
 });
 
+
+// Seminaria
+
+router.get('/seminaria', (req, res)=>{
+    Seminaria.find({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.render('admin/wspolpraca/seminaria', {data: found});
+        }
+    });
+});
+
+router.post('/seminaria', (req, res)=>{
+    Seminaria.create(req.body.data, (err, created)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.redirect('/edit/seminaria');
+        }
+    });
+});
+
+router.delete('/seminaria/:id', (req, res)=>{
+    Seminaria.findByIdAndRemove(req.params.id, (err, deleted)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.redirect('/edit/seminaria');
+        }
+    });
+});
+
+router.get('/seminaria/:id', (req, res)=>{
+    Seminaria.findById(req.params.id,(err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.render('admin/wspolpraca/seminariaedit', {data:found});
+        }
+    });
+});
+
+router.post('/seminaria/zdjecia/:id', (req, res)=>{
+    Seminaria.findById(req.params.id, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            found.images.push(req.body.photo);
+            found.save();
+            res.redirect('/edit/seminaria/' + req.params.id);
+        }
+    });
+});
+
+router.delete('/seminaria/zdjecia/:id', (req, res)=>{
+    Seminaria.findById(req.params.id, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            
+            found.images.splice(req.body.index,1);
+            found.save();
+            res.redirect('/edit/seminaria/' + req.params.id);
+        }
+    });
+});
+
+// Wyjazdy naukowe
+
+router.get('/wyjazdynaukowe', (req, res)=>{
+    WyjazdyNaukowe.find({}, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.render('admin/wspolpraca/wyjazdynaukowe', {data: found});
+        }
+    });
+});
+
+router.post('/wyjazdynaukowe', (req, res)=>{
+    WyjazdyNaukowe.create(req.body.data, (err, created)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.redirect('/edit/wyjazdynaukowe');
+        }
+    });
+});
+
+router.delete('/wyjazdynaukowe/:id', (req, res)=>{
+    WyjazdyNaukowe.findByIdAndRemove(req.params.id, (err, deleted)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.redirect('/edit/wyjazdynaukowe');
+        }
+    })
+});
+
+/////
+
+router.get('/wyjazdynaukowe/:id', (req, res)=>{
+    WyjazdyNaukowe.findById(req.params.id,(err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.render('admin/wspolpraca/wyjazdynaukoweedit', {data:found});
+        }
+    });
+});
+
+router.post('/wyjazdynaukowe/zdjecia/:id', (req, res)=>{
+    WyjazdyNaukowe.findById(req.params.id, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            found.images.push(req.body.photo);
+            found.save();
+            res.redirect('/edit/wyjazdynaukowe/' + req.params.id);
+        }
+    });
+});
+
+router.delete('/wyjazdynaukowe/zdjecia/:id', (req, res)=>{
+    WyjazdyNaukowe.findById(req.params.id, (err, found)=>{
+        if(err){
+            console.log(err);
+        }else{
+            found.images.splice(req.body.index,1);
+            found.save();
+            res.redirect('/edit/wyjazdynaukowe/' + req.params.id);
+        }
+    });
+});
+    
 
 
 module.exports = router;

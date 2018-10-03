@@ -1,0 +1,78 @@
+<% include ../partials/bootstrap %>
+<link rel='stylesheet' href='/stylesheets/dzialalnosc.css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.0/baguetteBox.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.0/baguetteBox.js" async></script> 
+
+        
+        
+    </head>
+            
+    <body>
+
+<div class="container">
+    <div class="border pb-3 mt-5 mb-5">
+        <div class="post-img">
+            <img width="100%" src="<%=data.imgUrl%>">
+        </div>
+        <div class="post-content">
+            <div class="row title">
+                <h2><%= data.title%></h2>
+            </div>
+            <div class="row desc">
+                <p><%- data.text%></p>
+            </div>
+            <div class="row extra">
+                <span><%= data.date%></span>
+            </div>
+            <div class="row">
+                <a class="btn btn-md btn-info mt-3" href="/wspolpraca/seminaria">Powrót</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+    <div class='container'>
+        <div class='photo-gallery border'>
+            <% for(var i=0;i<data.images.length;i++){%>
+                <% if(i%3==0){%>
+                    <div class='row'>
+                        <div class='col-md-4'>
+                            <a href='<%=data.images[i]%>'>
+                                <img width='250px' class='mt-4 ml-5 img-thumbnail' src='<%=data.images[i]%>'>
+                            </a>
+                        </div>
+                <% }else if(i%3==2){%>
+                        <div class='col-md-4'>
+                            <a href='<%=data.images[i]%>'>
+                                <img width='250px' class='mt-4 ml-5 img-thumbnail' src='<%=data.images[i]%>'>
+                            </a>
+                        </div>
+                    </div>
+                <% }else{%>
+                    <div class='col-md-4'>
+                        <a href='<%=data.images[i]%>'>
+                            <img width='250px' class='mt-4 ml-5 img-thumbnail' src='<%=data.images[i]%>'>
+                        </a>
+                    </div>
+                <% }%>
+            <% }%>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.onload = function(){
+  
+  
+  
+  baguetteBox.run('.photo-gallery', {animation: 'fadeIn'});
+    
+};
+
+    </script>
+    
+    </body>
+</html>

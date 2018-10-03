@@ -1,0 +1,58 @@
+<% include ../../partials/bootstrap %>
+
+
+
+<div class="container">
+        <div class="row ">
+            <div class="col-12 text-center">
+                <h2>DODAJ Seminaria</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-styler mt-3">
+                <form action="/edit/seminaria" method="POST">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="data[title]" placeholder="Tytuł">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="data[desc]" placeholder="krotki opis">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="data[imgUrl]" placeholder="URL obrazka">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="data[date]" placeholder="data">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="data[text]" rows="25" class="form-control">Tekst</textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block">Zatwierdź</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+        <div class='container'>
+            <%data.slice().reverse().forEach((item)=>{%>
+            <div class='row'>
+                <div class='col-md-12'>
+                    <hr>
+                    <p><%=item.title%></p>
+                    <a href='/edit/seminaria/<%=item._id%>'>edit</a>
+                    <form action='/edit/seminaria/<%=item._id%>?_method=DELETE' method='POST'>
+                        <button>usuń</button>
+                    </form> 
+                </div>
+            </div>
+            <% });%>
+        </div>
+        
+        
+        
+        
+        <div class="row">
+            <a href="/edit">Powrót</a>
+        </div>
+    
+</div>

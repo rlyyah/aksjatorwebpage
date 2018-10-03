@@ -1,0 +1,29 @@
+<% include ../partials/header %>
+<% include ../partials/dzialalnosc/photolist %>
+
+
+
+
+<div class='container'>
+    <div class="">
+        <% data.slice().reverse().forEach((news, index)=>{%>
+           
+            <div class='row aktualosci'>
+                <div class='col-md-3'>
+                    <img src='<%=news.imgUrl%>' class='img-fluid img-thumbnail'>    
+                </div>
+                <div class='col-md-9'>
+                    <h2><%=news.title%></h2>
+                    <p class='text-justify'><%-news.desc%></p>
+                    <a class='btn btn-md btn-info float-right mb-3' href="/wspolpraca/seminaria/<%=news._id%>">Czytaj więcej</a>
+                </div>
+            </div>
+        <% })%>
+        
+    </div>
+    
+</div>
+
+
+
+<% include ../partials/footer %>
